@@ -74,3 +74,39 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Kernel settings
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(setq require-final-newline t)
+(setq x-alt-keysym 'meta)
+(setq tramp-default-method "sshx")
+(setq password-cache-expiry nil)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+
+(set-language-environment-input-method "Korean")
+
+(set-language-environment "Korean")
+
+(display-time)
+
+(prefer-coding-system 'utf-8)
+
+(set-default-coding-systems 'utf-8)
+
+(set-terminal-coding-system 'utf-8)
+
+(defun select-next-window ()
+  "SELECT NEXT WINDOW."
+  (interactive)
+  (select-window (next-window (selected-window))))
+
+(defun select-previous-window ()
+  "SELECT PREVIOUS WINDOW."
+  (interactive)
+  (select-window (previous-window (selected-window))))
+
+(when window-system
+  (global-unset-key (kbd "C-z")))
