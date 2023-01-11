@@ -117,3 +117,5 @@
   (defvar mac-command-modifier)
   (setq mac-option-modifier 'alt)
   (setq mac-command-modifier 'meta))
+
+(setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
