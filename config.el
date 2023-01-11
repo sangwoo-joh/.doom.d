@@ -108,6 +108,12 @@
   (interactive)
   (select-window (previous-window (selected-window))))
 
+(defun unfill-paragraph ()	  ; by Stefan Monnier (foo at acm.org)
+  "TAKE A MULTI-LINE PARAGRAPH AND MAKE IT INTO A SINGLE LINE OF TEXT."
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
+
 (when window-system
   (global-unset-key (kbd "C-z")))
 
@@ -119,3 +125,13 @@
   (setq mac-command-modifier 'meta))
 
 (setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
+
+(map! "<C-tab>" #'select-next-window
+      "<C-S-tab>" #'select-previous-window
+      "<C-iso-lefttab>" #'select-previous-window
+      "C-x C-k" #'kill-this-buffer
+      "C-x C-n" #'next-buffer
+      "C-x C-p" #'previous-buffer
+      "C-c ;" #'comment-region
+      "C-c :" #'uncomment-region
+      "M-Q" #'unfill-paragraph)
