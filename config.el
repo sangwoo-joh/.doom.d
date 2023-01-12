@@ -101,6 +101,9 @@
 (when window-system
   (global-unset-key (kbd "C-z")))
 
+(after! switch-window
+  (setq switch-window-shortcut-style 'qwerty))
+
 ;; key bindings - for macos
 (when IS-MAC
   (defvar mac-option-modifier)
