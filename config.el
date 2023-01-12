@@ -265,3 +265,55 @@
   (setq pipenv-projectile-after-switch-function
         #'pipenv-projectile-after-switch-extended)
   (add-hook! 'python-mode-hook #'pipenv-mode))
+
+;;
+;; custom faces
+;;
+(custom-set-faces!
+  ;;
+  ;; Magit
+  ;;
+  '(magit-branch :inherit font-lock-constant-face :bold t)
+  '(magit-diff-context-highlight :background "base2")
+  '(magit-diff-file-header :foreground "fg-alt" :background "base2")
+  '(magit-diffstat-added :inherit font-lock-type-face)
+  '(magit-diffstat-removed :inherit font-lock-variable-name-face)
+  '(magit-hash :foreground "fg-alt")
+  '(magit-hunk-heading :background "base2")
+  '(magit-hunk-heading-highlight :background "base2")
+  '(magit-item-highlight :background "base2")
+  '(magit-log-author :foreground "fg-alt")
+  '(magit-process-ng :inherit font-lock-warning-face :bold t)
+  '(magit-process-ok :inherit font-lock-function-name-face :bold t)
+  '(magit-section-heading :inherit font-lock-keyword-face :bold t)
+  '(magit-section-highlight :background "base2")
+  ;;
+  ;; OCaml
+  ;;
+  '(tuareg-font-lock-governing-face :inherit font-lock-string-face :bold t)
+  '(tuareg-font-lock-multistage-face :inherit font-lock-comment-face :bold t)
+  '(tuareg-font-lock-line-number-face :foreground "base3")
+  '(tuareg-font-lock-operator-face :inherit font-lock-string-face)
+  '(tuareg-font-lock-module-face :inherit font-lock-type-face :bold t)
+  '(tuareg-font-lock-constructor-face :inherit font-lock-constant-face :bold t)
+  '(tuareg-font-lock-error-face :inherit font-lock-string-face :background "red" :bold t)
+  '(tuareg-font-lock-interactive-output-face :foreground "base3")
+  '(tuareg-font-lock-interactive-error-face :inherit font-lock-warning-face)
+  ;;
+  ;; Web
+  ;;
+  '(web-mode-builtin-face :inherit font-lock-builtin-face)
+  '(web-mode-comment-face :inherit font-lock-comment-face)
+  '(web-mode-constant-face :inherit font-lock-constant-face)
+  '(web-mode-doctype-face :inherit font-lock-comment-face)
+  '(web-mode-function-name-face :inherit font-lock-function-name-face)
+  '(web-mode-css-selector-face :inherit font-lock-type-face)
+  '(web-mode-html-attr-name-face :inherit font-lock-type-face)
+  '(web-mode-html-attr-value-face :inherit font-lock-function-name-face)
+  '(web-mode-html-tag-bracket-face :inherit 'default)
+  '(web-mode-html-tag-face :inherit font-lock-keyword-face :weight 'bold)
+  '(web-mode-keyword-face :inherit font-lock-keyword-face)
+  '(web-mode-preprocessor-face :foreground "orange")
+  '(web-mode-string-face :inherit font-lock-string-face)
+  '(web-mode-type-face :inherit font-lock-type-face)
+  '(web-mode-warning-face :inherit font-lock-warning-face))
