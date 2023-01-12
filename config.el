@@ -115,10 +115,6 @@
   (setq mac-option-modifier 'alt)
   (setq mac-command-modifier 'meta))
 
-(eyebrowse-mode t)
-
-(eyebrowse-restore-mode t)
-
 (elpy-enable)
 
 ;;
@@ -213,21 +209,8 @@
       ;;
       "C-c C-e" #'iedit-mode
       ;; undo-tree
-      "C-z" #'undo-tree-visualize
-      ;; eyebrowse
-      "C-c C-w C-n" #'set-frame-name
-      "C-c C-w C-r" #'eyebrowse-restore
-      "C-c C-w C-s" #'eyebrowse-restore-save-all
-      "M-0" #'eyebrowse-switch-to-window-config-0
-      "M-1" #'eyebrowse-switch-to-window-config-1
-      "M-2" #'eyebrowse-switch-to-window-config-2
-      "M-3" #'eyebrowse-switch-to-window-config-3
-      "M-4" #'eyebrowse-switch-to-window-config-4
-      "M-5" #'eyebrowse-switch-to-window-config-5
-      "M-6" #'eyebrowse-switch-to-window-config-6
-      "M-7" #'eyebrowse-switch-to-window-config-7
-      "M-8" #'eyebrowse-switch-to-window-config-8
-      "M-9" #'eyebrowse-switch-to-window-config-9)
+      "C-z" #'undo-tree-visualize)
+
 
 (map! :after copilot
       :map copilot-completion-map

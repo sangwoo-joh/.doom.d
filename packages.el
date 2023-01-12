@@ -54,7 +54,6 @@
 (package! swiper)
 (package! hungry-delete)
 (package! iedit)
-(package! eyebrowse)
 (package! fzf)
 (package! centered-window)
 (package! switch-window)
@@ -66,5 +65,3 @@
 (package! graphviz-dot-mode)
 (package! ssh-config-mode)
 (package! elpy)
-(package! eyebrowse-restore
-  :recipe (:host github :repo "frostyx/eyebrowse-restore" :files ("*.el")))
