@@ -82,6 +82,7 @@
 (setq x-alt-keysym 'meta)
 (setq tramp-default-method "sshx")
 (setq password-cache-expiry nil)
+(setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
@@ -112,7 +113,7 @@
   (setq mac-option-modifier 'alt)
   (setq mac-command-modifier 'meta))
 
-(setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
+(eyebrowse-mode t)
 
 ;;
 ;; kernel functions
@@ -222,8 +223,6 @@
       :map copilot-completion-map
       "<tab>" #'copilot-accept-completion
       "TAB" #'copilot-accept-completion)
-
-(after! eyebrowse (eyebrowse-mode t))
 
 ;;
 ;; magit
