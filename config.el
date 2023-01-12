@@ -115,8 +115,6 @@
   (setq mac-option-modifier 'alt)
   (setq mac-command-modifier 'meta))
 
-(elpy-enable)
-
 ;;
 ;; kernel functions
 ;;
@@ -355,6 +353,7 @@
 (add-hook! 'org-mode-hook #'kernel/org/add-save-with-timestamp-hook)
 
 (after! python
+  (elpy-enable)
   (setq pipenv-projectile-after-switch-function
         #'pipenv-projectile-after-switch-extended)
   (setq elpy-rpc-timeout nil)
