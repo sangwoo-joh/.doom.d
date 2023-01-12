@@ -137,6 +137,23 @@
   (let ((fill-column (point-max)))
     (fill-paragraph nil)))
 
+(defun kernel/increment-number-at-point ()
+  "Increase number at cursor."
+  (interactive)
+  (skip-chars-backward "0-9")
+  (or (looking-at "[0-9]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1+ (string-to-number (match-string 0))))))
+
+(defun kernel/decrement-number-at-point ()
+  "Decrease number at cursor."
+  (interactive)
+  (skip-chars-backward "0-9")
+  (or (looking-at "[0-9]+")
+      (error "No number at point"))
+  (replace-match (number-to-string (1- (string-to-number (match-string 0))))))
+
+
 (defun kernel/timestamp ()
   "PUT TIMESTAMP"
   (interactive)
@@ -179,6 +196,8 @@
       "C-x C-p" #'previous-buffer
       "C-c ;" #'comment-region
       "C-c :" #'uncomment-region
+      "C-c +" #'kernel/increment-number-at-point
+      "C-c -" #'kernel/decrement-number-at-point
       "M-Q" #'kernel/unfill-paragraph
       ;; multiple-cursors
       "C->" #'mc/mark-next-like-this
