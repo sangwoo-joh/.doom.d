@@ -209,7 +209,18 @@
       ;;
       "C-c C-e" #'iedit-mode
       ;; undo-tree
-      "C-z" #'undo-tree-visualize)
+      "C-z" #'undo-tree-visualize
+      ;; workspace
+      "M-0" #'+workspace/switch-to-0
+      "M-1" #'+workspace/switch-to-1
+      "M-2" #'+workspace/switch-to-2
+      "M-3" #'+workspace/switch-to-3
+      "M-4" #'+workspace/switch-to-4
+      "M-5" #'+workspace/switch-to-5
+      "M-6" #'+workspace/switch-to-6
+      "M-7" #'+workspace/switch-to-7
+      "M-8" #'+workspace/switch-to-8
+      "M-9" #'+workspace/switch-to-9)
 
 
 (map! :after copilot
