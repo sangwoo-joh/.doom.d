@@ -342,3 +342,52 @@
   '(web-mode-string-face :inherit font-lock-string-face)
   '(web-mode-type-face :inherit font-lock-type-face)
   '(web-mode-warning-face :inherit font-lock-warning-face))
+
+;;
+;; org
+;;
+(after! org
+  (setq org-startup-indented t
+        org-format-latex-options (plist-put org-format-latex-options :scale 1.75)
+        org-ellipsis " ▾"
+        org-hide-emphasis-markers t ;; Hide markup characters
+        org-src-fontify-natively t
+        org-src-tab-acts-natively t
+        org-src-window-setup 'current-window
+        org-pretty-entities t
+        org-fontify-whole-heading-line t
+        org-fontify-quote-and-verse-blocks t
+        org-fontify-done-headline t
+        org-fontify-todo-headline t
+        org-edit-src-content-indentation 2
+        org-src-preserve-indentation t
+        org-hide-block-startup nil
+        org-cycle-separator-lines 2
+        org-hide-leading-stars t
+        org-export-backends '(ascii html icalendar latex md odt)
+        org-export-with-toc t
+        org-highlight-latex-and-related '(native)
+        org-agenda-search-view-always-boolean t
+        org-agenda-timegrid-use-ampm t
+        org-agenda-time-grid
+        '((daily today require-timed remove-match)
+          (900 930 1000 1030 1200 1230 1400 1430 1600 1630 1700 1730 1800 1830 2000 2200)
+          "......." "-----------------")
+        org-agenda-current-time-string "⏰ ----------------"
+        org-log-done 'time
+        org-log-into-drawer t
+        org-todo-keywords
+        '((sequence "TODO(t)" "IN-PROGRESS(i)" "|" "DONE(d)" "CANCELLED(c)" "DEFERRED(f)" "SOMEDAY(s)")
+          (sequence "BACKLOG(b)" "ACTIVE(a)" "REVIEW(r)" "HOLD(h)" "|" "CANCELLED(c)")))
+  (dolist
+      (face '((org-document-title . 1.5)
+              (org-level-1 . 1.75)
+              (org-level-2 . 1.5)
+              (org-level-3 . 1.25)))
+    (set-face-attribute (car face) nil
+                        :font "Sans Serif"
+                        :foreground (face-foreground 'default nil 'default)
+                        :inherit 'default
+                        :underline nil
+                        :weight 'bold
+                        :height (cdr face))))
