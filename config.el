@@ -363,19 +363,13 @@
   ;; Magit
   ;;
   '(magit-branch :inherit font-lock-constant-face :bold t)
-  '(magit-diff-context-highlight :background "base2")
-  '(magit-diff-file-header :foreground "fg-alt" :background "base2")
   '(magit-diffstat-added :inherit font-lock-type-face)
   '(magit-diffstat-removed :inherit font-lock-variable-name-face)
   '(magit-hash :foreground "fg-alt")
-  '(magit-hunk-heading :background "base2")
-  '(magit-hunk-heading-highlight :background "base2")
-  '(magit-item-highlight :background "base2")
   '(magit-log-author :foreground "fg-alt")
   '(magit-process-ng :inherit font-lock-warning-face :bold t)
   '(magit-process-ok :inherit font-lock-function-name-face :bold t)
   '(magit-section-heading :inherit font-lock-keyword-face :bold t)
-  '(magit-section-highlight :background "base2")
   ;;
   ;; OCaml
   ;;
