@@ -65,6 +65,6 @@
 (package! dockerfile-mode)
 (package! graphviz-dot-mode)
 (package! ssh-config-mode)
-(package! pipenv)
+(package! elpy)
 (package! eyebrowse-restore
   :recipe (:host github :repo "frostyx/eyebrowse-restore" :files ("*.el")))

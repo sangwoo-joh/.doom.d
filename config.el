@@ -116,7 +116,10 @@
   (setq mac-command-modifier 'meta))
 
 (eyebrowse-mode t)
+
 (eyebrowse-restore-mode t)
+
+(elpy-enable)
 
 ;;
 ;; kernel functions
@@ -232,6 +235,13 @@
       "TAB" #'copilot-accept-completion)
 
 ;;
+;; pipenv
+;; C-c C-p: enter pipenv shell
+;;        a: activate
+;;        d: deactivate
+;;
+
+;;
 ;; magit
 ;; C-c v: enters version control management
 ;;       B: blame
@@ -264,7 +274,10 @@
 (after! python
   (setq pipenv-projectile-after-switch-function
         #'pipenv-projectile-after-switch-extended)
-  (add-hook! 'python-mode-hook #'pipenv-mode))
+  (setq elpy-rpc-timeout nil)
+  (setq elpy-rpc-python-command "python3")
+  (setq elpy-rpc-backend "jedi")
+  (add-hook! 'python-mode-hook #'pipenv-mode #'elpy-mode))
 
 ;;
 ;; custom faces
