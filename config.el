@@ -341,6 +341,13 @@
 ;;
 
 ;;
+;; ein
+;;
+;; Open an .ipynb file, press C-c C-o, or,
+;; M-x ein:run launches a jupyter process from emacs, or,
+;; M-x ein:login to a running jupyter server, or,
+
+;;
 ;; kernel hooks
 ;;
 (add-hook! 'prog-mode-hook #'copilot-mode)
