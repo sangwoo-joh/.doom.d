@@ -102,9 +102,10 @@
   (global-unset-key (kbd "C-z")))
 
 ;; key bindings - for macos
-(when (eq system-type 'darwin) ;; mac specific settings
+(when IS-MAC
   (defvar mac-option-modifier)
   (defvar mac-command-modifier)
+
   (setq mac-option-modifier 'alt)
   (setq mac-command-modifier 'meta))
 
