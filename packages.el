@@ -57,6 +57,11 @@
 (package! eyebrowse)
 (package! fzf)
 (package! centered-window)
+(package! switch-window)
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))
 (package! clang-format)
+(package! docker-tramp)
+(package! dockerfile-mode)
+(package! graphviz-dot-mode)
+(package! ssh-config-mode)
