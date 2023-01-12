@@ -65,3 +65,4 @@
 (package! dockerfile-mode)
 (package! graphviz-dot-mode)
 (package! ssh-config-mode)
+(package! pipenv)

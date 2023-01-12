@@ -253,3 +253,8 @@
 ;; kernel hooks
 ;;
 (add-hook! 'prog-mode-hook #'copilot-mode)
+
+(after! python
+  (setq pipenv-projectile-after-switch-function
+        #'pipenv-projectile-after-switch-extended)
+  (add-hook! 'python-mode-hook #'pipenv-mode))
