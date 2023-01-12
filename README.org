@@ -1,0 +1,3 @@
+#+title: .doom.d
+
+** My Emacs configuration on top of [[github:doomemacs/doomemacs][doomemacs]]
