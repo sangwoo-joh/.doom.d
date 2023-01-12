@@ -133,6 +133,15 @@
   (let ((fill-column (point-max)))
     (fill-paragraph nil)))
 
+(defun kernel/timestamp ()
+  "PUT TIMESTAMP"
+  (interactive)
+  (insert (format-time-string "%Y-%02m-%02d %02H:%02M:%02S")))
+
+(defun kernel/leetcode-problem-link (problem)
+  "CREATE LEETCODE PROBLEM LINK"
+  (interactive)
+  (format "https://leetcode.com/problems/%s/" problem))
 
 ;;
 ;; kernel key maps
