@@ -114,7 +114,9 @@
 
 (setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
 
+;;
 ;; kernel functions
+;;
 (defun kernel/select-next-window ()
   "SELECT NEXT WINDOW."
   (interactive)
@@ -132,7 +134,31 @@
     (fill-paragraph nil)))
 
 
-(map! "<C-tab>" #'kernel/select-next-window
+;;
+;; kernel key maps
+;;
+;; How to bind keys -- from doomemacs discourse (https://discourse.doomemacs.org/t/how-to-re-bind-keys/56)
+;;
+;; 1. Global keys
+;; (map! "C-x C-r" #'git-gutter:revert-hunk
+;;       "C-x C-b" #'ibuffer
+;;       "C-x C-l" #'+lookup/file)
+;; ;; or
+;; (map! :prefix "C-x"
+;;       "C-r" #'git-gutter:revert-hunk
+;;       "C-b" #'ibuffer
+;;       "C-l" #'+lookup/file)
+;;
+;; 2. Mode or buffer-local keys
+;; (map! :after python
+;;       :map python-mode-map
+;;       "C-x C-r" #'python-shell-send-region)
+;; ;; or
+;; (after! python
+;;   (map! :map python-mode-map "C-x C-r" #'python-shell-send-region))
+;;
+(map! ;; Global
+      "<C-tab>" #'kernel/select-next-window
       "<C-S-tab>" #'kernel/select-previous-window
       "<C-iso-lefttab>" #'kernel/select-previous-window
       "C-x C-k" #'kill-this-buffer
@@ -140,4 +166,50 @@
       "C-x C-p" #'previous-buffer
       "C-c ;" #'comment-region
       "C-c :" #'uncomment-region
-      "M-Q" #'kernel/unfill-paragraph)
+      "M-Q" #'kernel/unfill-paragraph
+      ;; multiple-cursors
+      "C->" #'mc/mark-next-like-this
+      "C-<" #'mc/mark-previous-like-this
+      ;; centered-window
+      "C-M-l" #'centered-window-mode
+      ;; switch-window
+      "C-x o" #'switch-window
+      "C-x 1" #'switch-window-then-maximize
+      "C-x 2" #'switch-window-then-split-below
+      "C-x 3" #'switch-window-then-split-right
+      "C-x 0" #'switch-window-then-delete
+      "C-x 4 d" #'switch-window-then-dired
+      "C-x 4 f" #'switch-window-then-find-file
+      "C-x 4 0" #'switch-window-then-kill-buffer
+      ;; fzf
+      "C-x C-r" #'fzf
+      ;; swiper
+      "C-c C-a" #'swiper-thing-at-point
+      ;; iedit
+      "C-c C-e" #'iedit-mode
+      ;; undo-tree
+      "C-z" #'undo-tree-visualize)
+
+(map! :after copilot
+      :map copilot-completion-map
+      "<tab>" #'copilot-accept-completion
+      "TAB" #'copilot-accept-completion)
+
+(after! eyebrowse
+  (eyebrowse-mode t)
+  (map! :map eyebrowse-mode-map
+        "M-0" #'eyebrowse-switch-to-window-config-0
+        "M-1" #'eyebrowse-switch-to-window-config-1
+        "M-2" #'eyebrowse-switch-to-window-config-2
+        "M-3" #'eyebrowse-switch-to-window-config-3
+        "M-4" #'eyebrowse-switch-to-window-config-4
+        "M-5" #'eyebrowse-switch-to-window-config-5
+        "M-6" #'eyebrowse-switch-to-window-config-6
+        "M-7" #'eyebrowse-switch-to-window-config-7
+        "M-8" #'eyebrowse-switch-to-window-config-8
+        "M-9" #'eyebrowse-switch-to-window-config-9))
+
+;;
+;; kernel hooks
+;;
+(add-hook! 'prog-mode-hook #'copilot-mode)
