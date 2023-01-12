@@ -215,6 +215,7 @@
       "<tab>" #'copilot-accept-completion
       "TAB" #'copilot-accept-completion)
 
+(after! eyebrowse (eyebrowse-mode t))
 
 ;;
 ;; kernel hooks
