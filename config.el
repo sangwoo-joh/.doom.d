@@ -164,6 +164,41 @@
   (interactive)
   (format "https://leetcode.com/problems/%s/" problem))
 
+(defun kernel/md/save-with-timestamp ()
+  "Save markdown with timestamp"
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (let* ((section-header "^-\\{3,\\}$")
+           (section-last-update-key "^last_update[ ]*:[ ]*")
+           (section-beginning (re-search-forward section-header))
+           (section-end (re-search-forward section-header))
+           (section-string (buffer-substring-no-properties section-beginning section-end)))
+      (goto-char section-beginning)
+      (if (string-match-p section-last-update-key section-string)
+          ;; if there is already last_update section, then kill the outdated date.
+          (progn
+            (re-search-forward section-last-update-key)
+            (kill-line))
+        ;; otherwise, insert new last_update section
+        (goto-char section-end)
+        (forward-line -1)
+        (goto-char (line-end-position))
+        (electric-newline-and-maybe-indent)
+        (insert "last_update: "))
+      (kernel/timestamp))))
+
+(defun kernel/md/add-save-with-timestamp-hook ()
+  "Add markdown save with timestamp hook"
+  (interactive)
+  (add-hook 'before-save-hook #'kernel/md/save-with-timestamp nil 'local))
+
+(defun kernel/md/delete-save-with-timestamp-hook ()
+  "Delete markdown save with timestamp hook"
+  (interactive)
+  (remove-hook 'before-save-hook #'kernel/md/save-with-timestamp 'local))
+
+
 ;;
 ;; kernel key maps
 ;;
@@ -282,6 +317,7 @@
 ;; kernel hooks
 ;;
 (add-hook! 'prog-mode-hook #'copilot-mode)
+(add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook)
 
 (after! python
   (setq pipenv-projectile-after-switch-function
