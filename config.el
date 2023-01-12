@@ -194,7 +194,15 @@
       "C-x C-r" #'fzf
       ;; swiper
       "C-c C-a" #'swiper-thing-at-point
+      ;;
       ;; iedit
+      ;; After iedit-mode is on (by C-C C-e),
+      ;; <tab>, S-<tab>, M->, M-<: navigation
+      ;; M-;: toggle
+      ;; M-N: numbering
+      ;; M-R: replace
+      ;; M-D: delete
+      ;;
       "C-c C-e" #'iedit-mode
       ;; undo-tree
       "C-z" #'undo-tree-visualize
@@ -216,6 +224,31 @@
       "TAB" #'copilot-accept-completion)
 
 (after! eyebrowse (eyebrowse-mode t))
+
+;;
+;; magit
+;; C-c v: enters version control management
+;;       B: blame
+;;       F: fetch
+;;       S: stage file
+;;       U: unstage file
+;;       t: git timemachine
+;;       x: magit file delete
+;;
+
+;;
+;; wgrep and wgrep-ag
+;; Usage: grep some keywords, and C-c C-p in result buffer.
+;; After editing, just save with C-x C-s as usual file in the buffer.
+;; Others:
+;; C-c C-e: Apply changes to file buffers
+;; C-c C-u: All changes are unmarked and ignored
+;; C-c C-d: Mark as delete to current line
+;; C-c C-r: Remove the changes in the region
+;; C-c C-p: Toggle read-only area
+;; C-c C-k: Discard all changes and exit
+;; C-c C-q: Exit wgrep mode
+;;
 
 ;;
 ;; kernel hooks
