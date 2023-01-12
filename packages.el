@@ -66,3 +66,5 @@
 (package! graphviz-dot-mode)
 (package! ssh-config-mode)
 (package! pipenv)
+(package! eyebrowse-restore
+  :recipe (:host github :repo "frostyx/eyebrowse-restore" :files ("*.el")))

@@ -114,10 +114,12 @@
   (setq mac-command-modifier 'meta))
 
 (eyebrowse-mode t)
+(eyebrowse-restore-mode t)
 
 ;;
 ;; kernel functions
 ;;
+
 (defun kernel/select-next-window ()
   "SELECT NEXT WINDOW."
   (interactive)
@@ -208,6 +210,9 @@
       ;; undo-tree
       "C-z" #'undo-tree-visualize
       ;; eyebrowse
+      "C-c C-w C-n" #'set-frame-name
+      "C-c C-w C-r" #'eyebrowse-restore
+      "C-c C-w C-s" #'eyebrowse-restore-save-all
       "M-0" #'eyebrowse-switch-to-window-config-0
       "M-1" #'eyebrowse-switch-to-window-config-1
       "M-2" #'eyebrowse-switch-to-window-config-2
