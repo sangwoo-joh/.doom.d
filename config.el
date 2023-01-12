@@ -98,22 +98,6 @@
 
 (set-terminal-coding-system 'utf-8)
 
-(defun select-next-window ()
-  "SELECT NEXT WINDOW."
-  (interactive)
-  (select-window (next-window (selected-window))))
-
-(defun select-previous-window ()
-  "SELECT PREVIOUS WINDOW."
-  (interactive)
-  (select-window (previous-window (selected-window))))
-
-(defun unfill-paragraph ()	  ; by Stefan Monnier (foo at acm.org)
-  "TAKE A MULTI-LINE PARAGRAPH AND MAKE IT INTO A SINGLE LINE OF TEXT."
-  (interactive)
-  (let ((fill-column (point-max)))
-    (fill-paragraph nil)))
-
 (when window-system
   (global-unset-key (kbd "C-z")))
 
@@ -126,12 +110,30 @@
 
 (setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
 
-(map! "<C-tab>" #'select-next-window
-      "<C-S-tab>" #'select-previous-window
-      "<C-iso-lefttab>" #'select-previous-window
+;; kernel functions
+(defun kernel/select-next-window ()
+  "SELECT NEXT WINDOW."
+  (interactive)
+  (select-window (next-window (selected-window))))
+
+(defun kernel/select-previous-window ()
+  "SELECT PREVIOUS WINDOW."
+  (interactive)
+  (select-window (previous-window (selected-window))))
+
+(defun kernel/unfill-paragraph ()  ; by Stefan Monnier (foo at acm.org)
+  "TAKE A MULTI-LINE PARAGRAPH AND MAKE IT INTO A SINGLE LINE OF TEXT."
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
+
+
+(map! "<C-tab>" #'kernel/select-next-window
+      "<C-S-tab>" #'kernel/select-previous-window
+      "<C-iso-lefttab>" #'kernel/select-previous-window
       "C-x C-k" #'kill-this-buffer
       "C-x C-n" #'next-buffer
       "C-x C-p" #'previous-buffer
       "C-c ;" #'comment-region
       "C-c :" #'uncomment-region
-      "M-Q" #'unfill-paragraph)
+      "M-Q" #'kernel/unfill-paragraph)
