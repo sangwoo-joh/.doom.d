@@ -91,6 +91,8 @@
 
 (set-language-environment "Korean")
 
+(set-fontset-font "fontset-default" 'hangul "D2Coding")
+
 (display-time)
 
 (prefer-coding-system 'utf-8)
