@@ -357,14 +357,28 @@
 (add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook)
 (add-hook! 'org-mode-hook #'kernel/org/add-save-with-timestamp-hook)
 
+(defun kernel/python-no-highlight-indentation-hook ()
+  "Python hook - just turn off indentation highlight"
+  (highlight-indentation-mode -1))
+
 (after! python
-  (elpy-enable)
+  (setq python-shell-interpreter "ipython"
+        python-shell-interpreter-args "-i --simple-prompt")
+  (remove-hook! 'python-mode-hook #'anaconda-mode))
+
+(after! pipenv
   (setq pipenv-projectile-after-switch-function
-        #'pipenv-projectile-after-switch-extended)
-  (setq elpy-rpc-timeout nil)
-  (setq elpy-rpc-python-command "python3")
-  (setq elpy-rpc-backend "jedi")
-  (add-hook! 'python-mode-hook #'pipenv-mode #'elpy-mode))
+      #'pipenv-projectile-after-switch-extended))
+
+(after! elpy
+ (elpy-enable)
+ (setq elpy-rpc-timeout nil)
+ (setq elpy-rpc-python-command "python3")
+ (setq elpy-rpc-backend "jedi")
+ (add-hook! 'elpy-mode-hook #'kernel/python-no-highlight-indentation-hook))
+
+(after! (python elpy)
+  (add-hook! 'python-mode-hook #'elpy-mode))
 
 ;;
 ;; custom faces
