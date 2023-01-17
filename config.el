@@ -214,6 +214,7 @@
         (message "No last_update key found.")
         ;; insert last_update into the first line
         (goto-char (point-min))
+        (forward-line 1)
         (electric-newline-and-maybe-indent)
         (forward-line -1)
         (insert section-last-update-key))
