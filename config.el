@@ -312,6 +312,9 @@
       "<tab>" #'copilot-accept-completion
       "TAB" #'copilot-accept-completion)
 
+(map! :after dired
+      :map dired-mode-map
+      "b" #'dired-up-directory)
 ;;
 ;; pipenv
 ;; C-c C-p: enter pipenv shell
