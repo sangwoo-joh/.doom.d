@@ -63,3 +63,5 @@
 (package! graphviz-dot-mode)
 (package! ssh-config-mode)
 (package! elpy)
+(package! magit-gitflow :disable t)
+(package! magit-todos :disable t)
