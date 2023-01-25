@@ -384,6 +384,18 @@
 (after! (python elpy)
   (add-hook! 'python-mode-hook #'elpy-mode))
 
+(defun kernel/unify-web-mode-spacing ()
+  "Stole from https://github.com/trev-dev/emacs"
+  (setq web-mode-markup-indent-offset tab-width)
+  (setq web-mode-css-indent-offset tab-width)
+  (setq web-mode-code-indent-offset tab-width)
+  (setq web-mode-style-padding tab-width)
+  (setq web-mode-script-padding tab-width)
+  (setq web-mode-indent-style 2))
+
+(after! web
+  (add-hook! 'web-mode-hook #'kernel/unify-web-mode-spacing))
+
 ;;
 ;; custom faces
 ;;
