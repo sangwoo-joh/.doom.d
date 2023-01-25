@@ -435,7 +435,7 @@
   '(web-mode-html-attr-name-face :inherit font-lock-type-face)
   '(web-mode-html-attr-value-face :inherit font-lock-function-name-face)
   '(web-mode-html-tag-bracket-face :inherit 'default)
-  '(web-mode-html-tag-face :inherit font-lock-keyword-face :weight 'bold)
+  '(web-mode-html-tag-face :inherit font-lock-keyword-face :bold t)
   '(web-mode-keyword-face :inherit font-lock-keyword-face)
   '(web-mode-preprocessor-face :foreground "orange")
   '(web-mode-string-face :inherit font-lock-string-face)
