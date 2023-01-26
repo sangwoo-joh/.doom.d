@@ -316,6 +316,21 @@
       :map dired-mode-map
       "b" #'dired-up-directory)
 ;;
+;; ibuffer
+;; % n: mark buffers by their name, using a regexp
+;; % m: mark buffers by their major mode, using a regexp
+;; % f: mark buffers by their filename, using a regexp
+;; % g: mark buffers by their group, using a regexp
+;; % L: mark all locked buffers
+;; * M: mark buffers by major mode
+;; * u: mark all "unsaved" buffers
+;; * m: mark all modified buffers
+;; * s: mark all buffers whose name begins and ends with '*'
+;; * e: mark all buffers which have an associated file, but that file doesn't currently exist
+;; * /: mark buffers in dired-mode
+;;
+
+;;
 ;; pipenv
 ;; C-c C-p: enter pipenv shell
 ;;        a: activate
