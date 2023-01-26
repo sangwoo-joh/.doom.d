@@ -96,7 +96,8 @@
 
 (set-language-environment "Korean")
 
-(set-fontset-font "fontset-default" 'hangul "D2Coding")
+(add-hook! 'after-setting-font-hook
+  (set-fontset-font "fontset-default" 'hangul (font-spec :family "D2Coding" :size 18)))
 
 (display-time)
 
