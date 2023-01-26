@@ -106,6 +106,12 @@
 
 (set-terminal-coding-system 'utf-8)
 
+(setq locale-coding-system 'utf-8)
+
+(set-keyboard-coding-system 'utf-8)
+
+(set-selection-coding-system 'utf-8)
+
 (when window-system
   (global-unset-key (kbd "C-z")))
 
