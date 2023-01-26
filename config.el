@@ -87,7 +87,18 @@
 (setq x-alt-keysym 'meta)
 (setq tramp-default-method "sshx")
 (setq password-cache-expiry nil)
-(setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
+
+;; Font settings
+(when IS-LINUX
+  (setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
+  (add-hook! 'after-setting-font-hook
+    (set-fontset-font "fontset-default" 'hangul (font-spec :family "D2Coding" :size 18))))
+
+(when IS-MAC
+  (setq doom-font (font-spec :family "Menlo" :size 16))
+  (add-hook! 'after-setting-font-hook
+    (set-fontset-font "fontset-default" 'hangul (font-spec :family "Menlo" :size 16))))
+
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
@@ -95,9 +106,6 @@
 (set-language-environment-input-method "Korean")
 
 (set-language-environment "Korean")
-
-(add-hook! 'after-setting-font-hook
-  (set-fontset-font "fontset-default" 'hangul (font-spec :family "D2Coding" :size 18)))
 
 (display-time)
 
