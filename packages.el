@@ -62,9 +62,7 @@
 (package! clang-format)
 (package! graphviz-dot-mode)
 (package! ssh-config-mode)
-(package! elpy)
 
 ;; deny list for doom packages
 (package! magit-gitflow :disable t)
 (package! magit-todos :disable t)
-(package! anaconda-mode :disable t)
