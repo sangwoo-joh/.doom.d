@@ -296,6 +296,8 @@
       "C-x 4 0" #'switch-window-then-kill-buffer
       ;; fzf
       "C-x C-r" #'fzf
+      ;; neotree
+      "C-x C-o" #'neotree
       ;; swiper
       "C-c C-a" #'swiper-thing-at-point
       ;;
