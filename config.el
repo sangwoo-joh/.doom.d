@@ -297,7 +297,7 @@
       ;; fzf
       "C-x C-r" #'fzf
       ;; neotree
-      "C-x C-o" #'neotree
+      "C-x C-o" #'neotree-projectile-action
       ;; swiper
       "C-c C-a" #'swiper-thing-at-point
       ;;
