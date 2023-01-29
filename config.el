@@ -241,6 +241,74 @@
   (interactive)
   (remove-hook 'before-save-hook #'kernel/org/save-with-timestamp 'local))
 
+(defun kernel/ps/get-document-filename (problem)
+  "Get proper filename for document.
+   This checks whether title.md or title.org exists.
+   And returns the existing file path."
+  (interactive)
+  (let* ((md-file (concat problem ".md"))
+         (org-file (concat problem ".org")))
+    (if (file-exists-p org-file)
+        org-file
+      (if (file-exists-p md-file)
+          md-file
+        (error "File not found: %s" problem)))))
+
+(defun kernel/ps/get-markdown-leetcode-problem-name ()
+  "Get leetcode problem name from current line's markdown link format."
+  (interactive)
+  (save-excursion
+    (goto-char (line-end-position))
+    (re-search-backward "\\[.+\\](\\(.+\\))")
+    (message (match-string 1))))
+
+(defun kernel/ps/goto-leetcode-problem ()
+  "Go to leetcode problem."
+  (interactive)
+  (let* ((problem (kernel/ps/get-markdown-leetcode-problem-name)))
+    (browse-url (concat "https://leetcode.com/problems/" problem))))
+
+(defun kernel/ps/goto-leetcode-document ()
+  "Goto leetcode document.
+   For backward compatibility, it searches for .org and .md files.
+   If both files exist, it will open the .org file.
+   If none of them exist, it will just report an error.
+   Link text regexp: \[.*\](.*)"
+  (interactive)
+  (let* ((problem (kernel/ps/get-markdown-leetcode-problem-name))
+         (filename (kernel/ps/get-document-filename problem)))
+
+    (xref-push-marker-stack)
+    (find-file filename)))
+
+(defun kernel/ps/create-leetcode-document (url)
+  "Create leetcode document from the problem's link."
+  (interactive "sURL: ")
+  (unless (string-match "^https://leetcode.com/problems/\\([^/.]+\\)/?" url)
+    (error "Invalid URL: %s" url))
+  (let* ((problem (match-string 1 url))
+         (title (capitalize (replace-regexp-in-string "-" " " problem))))
+    (insert (format "[%s](%s)" title problem))
+    (save-buffer)
+    ;; 1. If problem.md or problem.org exists, do the same thing as kernel/ps/goto-leetcode-document
+    ;; 2. Otherwise, create a new file problem.org from .template.org and set the title.
+    (condition-case nil
+        (kernel/ps/goto-leetcode-document)
+      (error
+       (let* ((template ".template.org")
+              (filename (concat problem ".org"))
+              (org-title (format "[[%s][%s]]" url title)))
+         (copy-file template filename)
+         (xref-push-marker-stack)
+         (find-file filename)
+         (goto-char (point-min))
+         (insert (format "#+title: %s" title))
+         (goto-char (point-max))
+         (electric-newline-and-maybe-indent)
+         (electric-newline-and-maybe-indent)
+         (insert (format "* %s" org-title))
+         (save-buffer))))))
+
 ;;
 ;; kernel key maps
 ;;
@@ -296,7 +364,6 @@
       "C-x C-o" #'neotree-projectile-action
       ;; swiper
       "C-c C-a" #'swiper-thing-at-point
-      ;;
       ;; iedit
       ;; After iedit-mode is on (by C-C C-e),
       ;; <tab>, S-<tab>, M->, M-<: navigation
@@ -328,6 +395,11 @@
 (map! :after dired
       :map dired-mode-map
       "b" #'dired-up-directory)
+
+(map! :map markdown-mode-map
+      "C-c C-c C-l" #'kernel/ps/create-leetcode-document
+      "C-c C-c C-o" #'kernel/ps/goto-leetcode-problem
+      "M-." #'kernel/ps/goto-leetcode-document)
 ;;
 ;; ibuffer
 ;; % n: mark buffers by their name, using a regexp
