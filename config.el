@@ -544,7 +544,7 @@
         org-fontify-quote-and-verse-blocks t
         org-fontify-done-headline t
         org-fontify-todo-headline t
-        org-edit-src-content-indentation 2
+        org-edit-src-content-indentation 4
         org-src-preserve-indentation t
         org-hide-block-startup nil
         org-cycle-separator-lines 2
