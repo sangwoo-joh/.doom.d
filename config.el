@@ -309,6 +309,15 @@
          (insert (format "* %s" org-title))
          (save-buffer))))))
 
+(defun kernel/ps/org-insert-leetcode-link (url)
+  "Insert leetcode link into org file."
+  (interactive "sURL: ")
+  (unless (string-match "^https://leetcode.com/problems/\\([^/.]+\\)/?" url)
+    (error "Invalid URL: %s" url))
+  (let* ((problem (match-string 1 url))
+         (title (capitalize (replace-regexp-in-string "-" " " problem))))
+    (insert (format "[[%s][%s]]" url title))))
+
 ;;
 ;; kernel key maps
 ;;
@@ -400,6 +409,9 @@
       "C-c C-c C-l" #'kernel/ps/create-leetcode-document
       "C-c C-c C-o" #'kernel/ps/goto-leetcode-problem
       "M-." #'kernel/ps/goto-leetcode-document)
+
+(map! :map org-mode-map
+      "C-c C-c C-l" #'kernel/ps/org-insert-leetcode-link)
 ;;
 ;; ibuffer
 ;; % n: mark buffers by their name, using a regexp
