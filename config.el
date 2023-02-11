@@ -268,6 +268,14 @@
   (let* ((problem (kernel/ps/get-markdown-leetcode-problem-name)))
     (browse-url (concat "https://leetcode.com/problems/" problem))))
 
+(defun kernel/ps/goto-org-leetcode-problem ()
+  "Go to leetcode problem"
+  (interactive)
+  (save-excursion
+    (goto-char (line-end-position))
+    (re-search-backward "\\[\\[\\(.+\\)\\]\\[.+\\]\\]")
+    (browse-url (match-string 1))))
+
 (defun kernel/ps/goto-leetcode-document ()
   "Goto leetcode document.
    For backward compatibility, it searches for .org and .md files.
@@ -411,7 +419,8 @@
       "M-." #'kernel/ps/goto-leetcode-document)
 
 (map! :map org-mode-map
-      "C-c C-c C-l" #'kernel/ps/org-insert-leetcode-link)
+      "C-c C-c C-l" #'kernel/ps/org-insert-leetcode-link
+      "C-c C-c C-o" #'kernel/ps/goto-org-leetcode-problem)
 ;;
 ;; ibuffer
 ;; % n: mark buffers by their name, using a regexp
