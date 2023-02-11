@@ -262,7 +262,7 @@
     (re-search-backward "\\[.+\\](\\(.+\\))")
     (message (match-string 1))))
 
-(defun kernel/ps/goto-leetcode-problem ()
+(defun kernel/ps/goto-markdown-leetcode-problem ()
   "Go to leetcode problem."
   (interactive)
   (let* ((problem (kernel/ps/get-markdown-leetcode-problem-name)))
@@ -407,7 +407,7 @@
 
 (map! :map markdown-mode-map
       "C-c C-c C-l" #'kernel/ps/create-leetcode-document
-      "C-c C-c C-o" #'kernel/ps/goto-leetcode-problem
+      "C-c C-c C-o" #'kernel/ps/goto-markdown-leetcode-problem
       "M-." #'kernel/ps/goto-leetcode-document)
 
 (map! :map org-mode-map
