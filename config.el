@@ -260,7 +260,7 @@
   (save-excursion
     (goto-char (line-end-position))
     (re-search-backward "\\[.+\\](\\(.+\\))")
-    (message (match-string 1))))
+    (match-string-no-properties 1)))
 
 (defun kernel/ps/goto-markdown-leetcode-problem ()
   "Go to leetcode problem."
@@ -294,7 +294,7 @@
   (interactive "sURL: ")
   (unless (string-match "^https://leetcode.com/problems/\\([^/.]+\\)/?" url)
     (error "Invalid URL: %s" url))
-  (let* ((problem (match-string 1 url))
+  (let* ((problem (match-string-no-properties 1 url))
          (title (capitalize (replace-regexp-in-string "-" " " problem))))
     (insert (format "[%s](%s)" title problem))
     (save-buffer)
