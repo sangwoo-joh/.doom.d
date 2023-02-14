@@ -262,13 +262,13 @@
     (re-search-backward "\\[.+\\](\\(.+\\))")
     (match-string-no-properties 1)))
 
-(defun kernel/ps/goto-markdown-leetcode-problem ()
+(defun kernel/ps/md-goto-leetcode-problem ()
   "Go to leetcode problem."
   (interactive)
   (let* ((problem (kernel/ps/get-markdown-leetcode-problem-name)))
     (browse-url (concat "https://leetcode.com/problems/" problem))))
 
-(defun kernel/ps/goto-org-leetcode-problem ()
+(defun kernel/ps/org-goto-leetcode-problem ()
   "Go to leetcode problem"
   (interactive)
   (save-excursion
@@ -276,7 +276,7 @@
     (re-search-backward "\\[\\[\\(.+\\)\\]\\[.+\\]\\]")
     (browse-url (match-string 1))))
 
-(defun kernel/ps/goto-leetcode-document ()
+(defun kernel/ps/md-goto-leetcode-document ()
   "Goto leetcode document.
    For backward compatibility, it searches for .org and .md files.
    If both files exist, it will open the .org file.
@@ -289,7 +289,7 @@
     (xref-push-marker-stack)
     (find-file filename)))
 
-(defun kernel/ps/create-leetcode-document (url)
+(defun kernel/ps/md-create-leetcode-document (url)
   "Create leetcode document from the problem's link."
   (interactive "sURL: ")
   (unless (string-match "^https://leetcode.com/problems/\\([^/.]+\\)/?" url)
@@ -298,10 +298,10 @@
          (title (capitalize (replace-regexp-in-string "-" " " problem))))
     (insert (format "[%s](%s)" title problem))
     (save-buffer)
-    ;; 1. If problem.md or problem.org exists, do the same thing as kernel/ps/goto-leetcode-document
+    ;; 1. If problem.md or problem.org exists, do the same thing as kernel/ps/md-goto-leetcode-document
     ;; 2. Otherwise, create a new file problem.org from .template.org and set the title.
     (condition-case nil
-        (kernel/ps/goto-leetcode-document)
+        (kernel/ps/md-goto-leetcode-document)
       (error
        (let* ((template ".template.org")
               (filename (concat problem ".org"))
@@ -414,14 +414,10 @@
       "b" #'dired-up-directory)
 
 (map! :map markdown-mode-map
-      "C-c C-c C-l" #'kernel/ps/create-leetcode-document
-      "C-c C-c C-o" #'kernel/ps/goto-markdown-leetcode-problem
-      "M-." #'kernel/ps/goto-leetcode-document)
+      "C-c C-c C-l" #'kernel/ps/md-create-leetcode-document
+      "C-c C-c C-o" #'kernel/ps/md-goto-leetcode-problem
+      "M-." #'kernel/ps/md-goto-leetcode-document)
 
-(map! :map org-mode-map
-      "C-c C-c C-l" #'kernel/ps/org-insert-leetcode-link
-      "C-c C-c C-o" #'kernel/ps/goto-org-leetcode-problem)
-;;
 ;; ibuffer
 ;; % n: mark buffers by their name, using a regexp
 ;; % m: mark buffers by their major mode, using a regexp
