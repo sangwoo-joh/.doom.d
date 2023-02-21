@@ -268,8 +268,8 @@
   (let* ((problem (kernel/ps/get-markdown-leetcode-problem-name)))
     (browse-url (concat "https://leetcode.com/problems/" problem))))
 
-(defun kernel/ps/org-goto-leetcode-problem ()
-  "Go to leetcode problem"
+(defun kernel/ps/org-open-link ()
+  "Open doom link in browser"
   (interactive)
   (save-excursion
     (goto-char (line-end-position))
