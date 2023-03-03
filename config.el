@@ -418,6 +418,9 @@
       "C-c C-c C-o" #'kernel/ps/md-goto-leetcode-problem
       "M-." #'kernel/ps/md-goto-leetcode-document)
 
+(map! :map tuareg-mode-map
+      "C-c C-f" #'ocamlformat)
+
 ;; ibuffer
 ;; % n: mark buffers by their name, using a regexp
 ;; % m: mark buffers by their major mode, using a regexp
