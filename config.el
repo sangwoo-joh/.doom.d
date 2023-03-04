@@ -442,6 +442,7 @@
 ;;        d: deactivate
 ;;
 
+(setq auth-sources '("~/.authinfo"))
 ;;
 ;; magit
 ;; C-c v: enters version control management
