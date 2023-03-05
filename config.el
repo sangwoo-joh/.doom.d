@@ -380,7 +380,7 @@
       ;; neotree
       "C-x C-o" #'neotree-projectile-action
       ;; swiper
-      "C-c C-a" #'swiper-thing-at-point
+      "C-c C-s" #'swiper-thing-at-point
       ;; iedit
       ;; After iedit-mode is on (by C-C C-e),
       ;; <tab>, S-<tab>, M->, M-<: navigation
@@ -389,7 +389,7 @@
       ;; M-R: replace
       ;; M-D: delete
       ;;
-      "C-c C-e" #'iedit-mode
+      "C-c C-a" #'iedit-mode
       ;; undo-tree
       "C-z" #'undo-tree-visualize
       ;; workspace
