@@ -421,6 +421,8 @@
 (map! :map tuareg-mode-map
       "C-c C-f" #'ocamlformat)
 
+(add-hook! tuareg-mode (merlin-mode))
+
 ;; ibuffer
 ;; % n: mark buffers by their name, using a regexp
 ;; % m: mark buffers by their major mode, using a regexp
