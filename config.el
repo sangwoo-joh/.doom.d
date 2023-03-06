@@ -442,8 +442,8 @@
 ;;        d: deactivate
 ;;
 
-(setq auth-sources '("~/.authinfo"))
 (after! magit
+  (setq auth-sources '("~/.authinfo"))
   (add-to-list 'forge-alist
                '("github.sec.samsung.net"
                  "github.sec.samsung.net/api/v3"
