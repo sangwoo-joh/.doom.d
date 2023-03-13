@@ -3,3 +3,11 @@
  My Emacs configuration on top of [[https://github.com/doomemacs/doomemacs ][doomemacs]].
 
  Doomemacs is the best emacs framework.
+
+** Installation
+
+1. Clone [[https://github.com/doomemacs/doomemacs][doomemacs]] to =~/.emacs.d=
+2. Clone this project to =~/.doom.d=
+3. Add =~/.emacs.d/bin= to =$PATH=
+4. Run =doom sync=
+5. Profit. Enjoy your emacs!
