@@ -1,3 +1,5 @@
 #+title: .doom.d
 
-** My Emacs configuration on top of [[github:doomemacs/doomemacs][doomemacs]]
+ My Emacs configuration on top of [[https://github.com/doomemacs/doomemacs ][doomemacs]].
+
+ Doomemacs is the best emacs framework.
