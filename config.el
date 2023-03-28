@@ -375,6 +375,7 @@
       "C-x 4 d" #'switch-window-then-dired
       "C-x 4 f" #'switch-window-then-find-file
       "C-x 4 0" #'switch-window-then-kill-buffer
+      "C-x w" #'switch-window-then-swap-buffer
       ;; fzf
       "C-x C-r" #'fzf
       ;; neotree
