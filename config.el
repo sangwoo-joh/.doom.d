@@ -79,6 +79,8 @@
 ;; Kernel settings
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(setq company-idle-delay nil)
+
 (setq require-final-newline t)
 (setq x-alt-keysym 'meta)
 (setq tramp-default-method "sshx")
