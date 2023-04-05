@@ -468,9 +468,9 @@
 
 ;;
 ;; wgrep and wgrep-ag
-;; Usage: grep some keywords, and C-c C-p in result buffer.
-;; After editing, just save with C-x C-s as usual file in the buffer.
-;; Others:
+;; Usage: grep some keywords:
+;; C-c C-p: Enter wgrep mode
+;; C-x C-s: Save editing
 ;; C-c C-e: Apply changes to file buffers
 ;; C-c C-u: All changes are unmarked and ignored
 ;; C-c C-d: Mark as delete to current line
