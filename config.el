@@ -328,6 +328,11 @@
          (title (capitalize (replace-regexp-in-string "-" " " problem))))
     (insert (format "[[%s][%s]]" url title))))
 
+(defun +workspace/switch-to-9 ()
+  "Switch to workspace 9."
+  (interactive)
+  (+workspace/switch-to 9))
+
 ;;
 ;; kernel key maps
 ;;
@@ -404,7 +409,8 @@
       "M-6" #'+workspace/switch-to-5
       "M-7" #'+workspace/switch-to-6
       "M-8" #'+workspace/switch-to-7
-      "M-9" #'+workspace/switch-to-8)
+      "M-9" #'+workspace/switch-to-8
+      "M-0" #'+workspace/switch-to-9)
 
 
 (map! :after copilot
