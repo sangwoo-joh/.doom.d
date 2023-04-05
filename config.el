@@ -398,6 +398,7 @@
       ;; M-D: delete
       ;;
       "C-c C-a" #'iedit-mode
+      "C-c <tab>" #'company-complete
       ;; undo-tree
       "C-z" #'undo-tree-visualize
       ;; workspace
