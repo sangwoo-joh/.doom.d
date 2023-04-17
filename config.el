@@ -333,6 +333,13 @@
   (interactive)
   (+workspace/switch-to 9))
 
+(defun kernel/copy-all ()
+  "Copy all."
+  (interactive)
+  (save-excursion
+    (kill-ring-save (point-min) (point-max)))
+  (message "Copied the whole current buffer."))
+
 ;;
 ;; kernel key maps
 ;;
@@ -387,6 +394,7 @@
       "C-x C-r" #'fzf
       ;; neotree
       "C-x C-o" #'neotree-projectile-action
+      "C-c C-a" #'kernel/copy-all
       ;; swiper
       "C-c C-s" #'swiper-thing-at-point
       ;; iedit
