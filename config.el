@@ -340,6 +340,8 @@
     (kill-ring-save (point-min) (point-max)))
   (message "Copied the whole current buffer."))
 
+;; Selecting all buffer is already mapped to C-x h (mark-whole-buffer)
+
 ;;
 ;; kernel key maps
 ;;
