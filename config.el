@@ -443,6 +443,12 @@
 
 (add-hook! tuareg-mode (merlin-mode))
 
+(map! :map (c++-mode-map c-mode-map)
+      "M-." #'rtags-find-symbol-at-point
+      "M-," #'rtags-location-stack-back
+      "C-," #'rtags-location-stack-forward
+      "C-c C-t" #'rtags-symbol-type)
+
 ;; ibuffer
 ;; % n: mark buffers by their name, using a regexp
 ;; % m: mark buffers by their major mode, using a regexp
