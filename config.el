@@ -445,8 +445,8 @@
 
 (map! :map (c++-mode-map c-mode-map)
       "M-." #'rtags-find-symbol-at-point
-      "M-," #'rtags-location-stack-back
-      "C-," #'rtags-location-stack-forward
+      "M-," #'xref-go-back
+      "C-," #'xref-go-forward
       "C-c C-t" #'rtags-symbol-type)
 
 ;; ibuffer
