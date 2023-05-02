@@ -542,6 +542,8 @@
 ;; custom faces
 ;;
 (custom-set-faces!
+  '(line-number :foreground "#8e8e8e")
+  '(line-number-current-line :foreground "yellow")
   ;;
   ;; Magit
   ;;
