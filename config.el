@@ -396,7 +396,7 @@
       "C-x C-r" #'fzf
       ;; neotree
       "C-x C-o" #'neotree-projectile-action
-      "C-c C-a" #'kernel/copy-all
+      ;; "C-c C-a" #'kernel/copy-all
       ;; swiper
       "C-c C-s" #'swiper-thing-at-point
       ;; iedit
