@@ -340,6 +340,14 @@
     (kill-ring-save (point-min) (point-max)))
   (message "Copied the whole current buffer."))
 
+(defun kernel/count-marked-items ()
+  "Run ls -la | wc -l in dired mode"
+  (interactive)
+  (dired-unmark-all-marks)
+  (dired-toggle-marks)
+  (message "Total items: %d" (length (dired-get-marked-files)))
+  (dired-toggle-marks))
+
 ;; Selecting all buffer is already mapped to C-x h (mark-whole-buffer)
 
 ;;
@@ -431,7 +439,8 @@
 
 (map! :after dired
       :map dired-mode-map
-      "b" #'dired-up-directory)
+      "b" #'dired-up-directory
+      "W" #'kernel/count-marked-items)
 
 (map! :map markdown-mode-map
       "C-c C-c C-l" #'kernel/ps/md-create-leetcode-document
