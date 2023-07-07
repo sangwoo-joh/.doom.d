@@ -448,7 +448,8 @@
       "M-." #'kernel/ps/md-goto-leetcode-document)
 
 (map! :map tuareg-mode-map
-      "C-c C-f" #'ocamlformat)
+      "C-c C-f" #'ocamlformat
+      "C-c C-o" #'merlin-eldoc-jump-to-next-occurrence)
 
 (add-hook! tuareg-mode (merlin-mode))
 
