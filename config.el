@@ -528,7 +528,7 @@
 (add-hook! 'org-mode-hook #'kernel/org/add-save-with-timestamp-hook)
 
 (after! python
-  (setq python-shell-interpreter "ipython"
+  (setq python-shell-interpreter "python3"
         python-shell-interpreter-args "-i --simple-prompt")
   (remove-hook! 'python-mode-hook #'anaconda-mode))
 
