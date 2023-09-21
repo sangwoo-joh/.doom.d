@@ -243,7 +243,7 @@
   (interactive)
   (remove-hook 'before-save-hook #'kernel/org/save-with-timestamp 'local))
 
-(defun kernel/ps/get-document-filename (problem)
+(defun kernel/md/get-document-filename (problem)
   "Get proper filename for document.
    This checks whether title.md or title.org exists.
    And returns the existing file path."
@@ -254,7 +254,9 @@
         org-file
       (if (file-exists-p md-file)
           md-file
-        (error "File not found: %s" problem)))))
+        (if (file-exists-p problem)
+            problem
+          (error "File not found: %s" problem))))))
 
 (defun kernel/ps/get-markdown-leetcode-problem-name ()
   "Get leetcode problem name from current line's markdown link format."
@@ -286,7 +288,7 @@
    Link text regexp: \[.*\](.*)"
   (interactive)
   (let* ((problem (kernel/ps/get-markdown-leetcode-problem-name))
-         (filename (kernel/ps/get-document-filename problem)))
+         (filename (kernel/md/get-document-filename problem)))
 
     (xref-push-marker-stack)
     (find-file filename)))
