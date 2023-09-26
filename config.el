@@ -375,7 +375,7 @@
 ;; (after! python
 ;;   (map! :map python-mode-map "C-x C-r" #'python-shell-send-region))
 ;;
-(map! ;; Global
+(map! :map general-override-mode-map
       "<C-tab>" #'kernel/select-next-window
       "<C-S-tab>" #'kernel/select-previous-window
       "<C-iso-lefttab>" #'kernel/select-previous-window
