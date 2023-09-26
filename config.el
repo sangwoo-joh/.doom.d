@@ -410,6 +410,7 @@
       ;; swiper
       "C-c C-s" #'swiper-thing-at-point
       ;; iedit
+      "C-c C-i" #'iedit-mode
       ;; After iedit-mode is on (by C-C C-e),
       ;; <tab>, S-<tab>, M->, M-<: navigation
       ;; M-;: toggle
@@ -417,7 +418,6 @@
       ;; M-R: replace
       ;; M-D: delete
       ;;
-      "C-c C-i" #'iedit-mode
       "C-c <tab>" #'company-complete
       ;; undo-tree
       "C-z" #'undo-tree-visualize
