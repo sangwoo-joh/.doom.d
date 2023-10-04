@@ -268,13 +268,11 @@
   (interactive)
   (let* ((md-file (concat problem ".md"))
          (org-file (concat problem ".org")))
-    (if (file-exists-p org-file)
-        org-file
-      (if (file-exists-p md-file)
-          md-file
-        (if (file-exists-p problem)
-            problem
-          (error "File not found: %s" problem))))))
+    (cond
+     ((file-exists-p org-file) org-file)
+     ((file-exists-p md-file) md-file)
+     ((file-exists-p problem) problem)
+     (t (error "File not found: %s" problem)))))
 
 (defun kernel/ps/get-markdown-leetcode-problem-name ()
   "Get leetcode problem name from current line's markdown link format."
