@@ -549,11 +549,10 @@
   (progn
     (display-line-numbers-mode -1)
     (olivetti-mode 1)
-    (highlight-indent-guides-mode nil)
     (setq markdown-header-scaling t)
-    (setq markdown-header-scaling-values '(1.5 1.4 1.3 1.2 1.1 1.0))
-    (setq markdown-hide-markup t)
-    (setq markdown-fontify-code-blocks-natively t)))
+    (markdown-toggle-markup-hiding)
+    (markdown-toggle-fontify-code-blocks-natively)
+    (highlight-indent-guides-mode -1)))
 
 (add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook #'nicer-md)
 (add-hook! 'org-mode-hook #'kernel/org/add-save-with-timestamp-hook)
