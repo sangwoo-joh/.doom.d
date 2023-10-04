@@ -141,9 +141,12 @@
   (setq mac-option-modifier 'alt)
   (setq mac-command-modifier 'meta))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; kernel functions
+;; my kernel functions
 ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 (defun kernel/select-next-window ()
   "SELECT NEXT WINDOW."
