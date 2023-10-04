@@ -554,7 +554,7 @@
 
 (after! pipenv
   (setq pipenv-projectile-after-switch-function
-      #'pipenv-projectile-after-switch-extended))
+        #'pipenv-projectile-after-switch-extended))
 
 (defun kernel/unify-web-mode-spacing ()
   "Stole from https://github.com/trev-dev/emacs"
