@@ -232,35 +232,6 @@
   (interactive)
   (remove-hook 'before-save-hook #'kernel/md/save-with-timestamp 'local))
 
-(defun kernel/org/save-with-timestamp ()
-  "Save org file with timestamp."
-  (interactive)
-  (save-excursion
-    (goto-char (point-min))
-    (let* ((section-last-update-key-re "^#\\+last_update[ ]*:[ ]*")
-           (section-last-update-key "#+last_update: "))
-      (if (re-search-forward section-last-update-key-re nil t)
-          (kill-line)
-        ;; else
-        (message "No last_update key found.")
-        ;; insert last_update into the first line
-        (goto-char (point-min))
-        (forward-line 1)
-        (electric-newline-and-maybe-indent)
-        (forward-line -1)
-        (insert section-last-update-key))
-      (kernel/timestamp))))
-
-(defun kernel/org/add-save-with-timestamp-hook ()
-  "Add org timestamp hook."
-  (interactive)
-  (add-hook 'before-save-hook #'kernel/org/save-with-timestamp nil 'local))
-
-(defun kernel/org/delete-save-with-timestamp-hook ()
-  "Delete org timestamp hook."
-  (interactive)
-  (remove-hook 'before-save-hook #'kernel/org/save-with-timestamp 'local))
-
 (defun kernel/md/get-document-filename (problem)
   "Get proper filename for document.
    This checks whether title.md or title.org exists.
@@ -319,22 +290,24 @@
     (insert (format "[%s](%s)" title problem))
     (save-buffer)
     ;; 1. If problem.md or problem.org exists, do the same thing as kernel/ps/md-goto-leetcode-document
-    ;; 2. Otherwise, create a new file problem.org from .template.org and set the title.
+    ;; 2. Otherwise, create a new file problem.md from .template.md and set the title.
     (condition-case nil
         (kernel/ps/md-goto-leetcode-document)
       (error
-       (let* ((template ".template.org")
-              (filename (concat problem ".org"))
-              (org-title (format "[[%s][%s]]" url title)))
+       (let* ((template ".template.md")
+              (filename (concat problem ".md"))
+              (md-title (format "# [%s](%s)" title url)))
          (copy-file template filename)
          (xref-push-marker-stack)
          (find-file filename)
          (goto-char (point-min))
-         (insert (format "#+title: %s" title))
+         (re-search-forward "^title:")
+         (insert " ")
+         (insert title)
          (goto-char (point-max))
          (electric-newline-and-maybe-indent)
          (electric-newline-and-maybe-indent)
-         (insert (format "* %s" org-title))
+         (insert md-title)
          (save-buffer))))))
 
 (defun kernel/ps/org-insert-leetcode-link (url)
@@ -555,7 +528,6 @@
     (highlight-indent-guides-mode -1)))
 
 (add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook #'nicer-md)
-(add-hook! 'org-mode-hook #'kernel/org/add-save-with-timestamp-hook)
 
 (after! python
   (setq python-shell-interpreter "python3"
