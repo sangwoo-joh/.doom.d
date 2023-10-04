@@ -746,3 +746,28 @@
 
 (with-eval-after-load 'org
   (plist-put org-format-latex-options :background 'default))
+
+;; experimental - org-roam-v2
+(use-package! org-roam
+  :after org
+  :config
+  (setq org-roam-v2-ack t)
+  (setq org-roam-directory "~/.roam")
+  (org-roam-db-autosync-enable)
+  (setq org-roam-completion-everywhere t))
+
+(defun nicer-roam ()
+  (progn
+    (setq-local oliveitti-body-width 44)
+    (olivetti-mode 1)
+    (centered-window-mode -1)
+    (set-face-background 'magit-section-highlight (face-background 'default))))
+
+(after! org-roam
+  (add-hook! 'org-roam-mode-hook #'nicer-roam))
+
+(use-package! org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-open-on-start nil)
+  (when IS-LINUX (setq org-roam-ui-browser-function #'xwidget-webkit-browse-url)))
