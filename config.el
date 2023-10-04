@@ -82,7 +82,9 @@
 (setq company-idle-delay nil)
 
 ;; show battery
-(display-battery-mode 1)
+(unless (equal "Battery status not available"
+               (battery))
+  (display-battery-mode 1))
 
 ;; fullscreen when starting emacs
 (if (eq initial-window-system 'x)
