@@ -141,6 +141,9 @@
   (setq mac-option-modifier 'alt)
   (setq mac-command-modifier 'meta))
 
+(after! centaur-tabs
+  (setq centaur-tabs-style "wave"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; my kernel functions
