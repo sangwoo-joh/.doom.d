@@ -506,7 +506,7 @@
                '("github.sec.samsung.net"
                  "github.sec.samsung.net/api/v3"
                  "github.sec.samsung.net"
-                 forge-github-repository)))
+                 'forge-github-repository)))
 
 ;;
 ;; magit
