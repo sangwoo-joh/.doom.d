@@ -632,6 +632,14 @@
            org-appear-autoentities t
            org-appear-autosubmarkers t ))
 
+(use-package! olivetti
+  :after org
+  :hook (org-mode . olivetti-mode)
+  :config (setq olivetti-min-body-width 50
+                olivetti-body-width 80
+                olivetti-style 'fancy
+                olivetti-margin-width 12))
+
 ;;; Ugly org hooks
 (defun nicer-org ()
   (progn

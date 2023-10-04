@@ -69,3 +69,4 @@
 
 (package! org-fragtog)
 (package! org-appear)
+(package! olivetti)
