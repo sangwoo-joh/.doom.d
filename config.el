@@ -379,6 +379,10 @@
       "<C-tab>" #'kernel/select-next-window
       "<C-S-tab>" #'kernel/select-previous-window
       "<C-iso-lefttab>" #'kernel/select-previous-window
+      "C-<next>" #'centaur-tabs-forward
+      "C-<prior>" #'centaur-tabs-backward
+      "C-<home>" #'centaur-tabs-select-beg-tab
+      "C-<end>" #'centaur-tabs-select-end-tab
       "C-x C-k" #'kill-this-buffer
       "C-x C-n" #'next-buffer
       "C-x C-p" #'previous-buffer
