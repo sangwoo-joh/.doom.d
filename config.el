@@ -144,6 +144,8 @@
 (after! centaur-tabs
   (setq centaur-tabs-style "wave"))
 
+(server-start)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;; my kernel functions
