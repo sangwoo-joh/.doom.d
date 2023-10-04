@@ -389,8 +389,7 @@
 ;; (after! python
 ;;   (map! :map python-mode-map "C-x C-r" #'python-shell-send-region))
 ;;
-(map! :map general-override-mode-map
-      "<C-tab>" #'kernel/select-next-window
+(map! "<C-tab>" #'kernel/select-next-window
       "<C-S-tab>" #'kernel/select-previous-window
       "<C-iso-lefttab>" #'kernel/select-previous-window
       "C-<next>" #'centaur-tabs-forward
@@ -450,7 +449,6 @@
       "M-8" #'+workspace/switch-to-7
       "M-9" #'+workspace/switch-to-8
       "M-0" #'+workspace/switch-to-9)
-
 
 (map! :after copilot
       :map copilot-completion-map
