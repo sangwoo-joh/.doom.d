@@ -81,6 +81,9 @@
 
 (setq company-idle-delay nil)
 
+;; show battery
+(display-battery-mode 1)
+
 (setq require-final-newline t)
 (setq x-alt-keysym 'meta)
 (setq tramp-default-method "sshx")
