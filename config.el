@@ -605,34 +605,3 @@
 ;;
 ;; org
 ;;
-(after! org
-  (setq org-startup-indented t
-        org-format-latex-options (plist-put org-format-latex-options :scale 1.75)
-        org-ellipsis " ▾"
-        org-hide-emphasis-markers t ;; Hide markup characters
-        org-src-fontify-natively t
-        org-src-tab-acts-natively t
-        org-src-window-setup 'current-window
-        org-pretty-entities t
-        org-fontify-whole-heading-line t
-        org-fontify-quote-and-verse-blocks t
-        org-fontify-done-headline t
-        org-fontify-todo-headline t
-        org-edit-src-content-indentation 4
-        org-src-preserve-indentation t
-        org-hide-block-startup nil
-        org-cycle-separator-lines 2
-        org-hide-leading-stars t)
-  (dolist
-      (face '((org-document-title . 1.5)
-              (org-level-1 . 1.75)
-              (org-level-2 . 1.5)
-              (org-level-3 . 1.25)))
-    (set-face-attribute
-     (car face) nil
-     :font "Sans Serif"
-     :foreground (face-foreground 'default nil 'default)
-     :inherit 'default
-     :underline nil
-     :weight 'bold
-     :height (cdr face))))
