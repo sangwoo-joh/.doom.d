@@ -544,7 +544,7 @@
 ;; kernel hooks
 ;;
 (add-hook! 'prog-mode-hook #'copilot-mode)
-(add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook)
+(add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook #'markdown-toggle-fontify-code-blocks-natively)
 (add-hook! 'org-mode-hook #'kernel/org/add-save-with-timestamp-hook)
 
 (after! python
