@@ -66,3 +66,6 @@
 ;; deny list for doom packages
 (package! magit-gitflow :disable t)
 (package! magit-todos :disable t)
+
+(package! org-fragtog)
+(package! org-appear)

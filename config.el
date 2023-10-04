@@ -617,5 +617,144 @@
   '(web-mode-warning-face :inherit font-lock-warning-face))
 
 ;;
-;; org
+;; org settings - from Academic-Doom-Emacs-Config
 ;;
+
+(use-package! org-fragtog
+  :after org
+  :hook (org-mode . org-fragtog-mode))
+
+(use-package! org-appear
+  :after org
+  :hook (org-mode . org-appear-mode)
+  :config (setq
+           org-appear-autolinks t
+           org-appear-autoentities t
+           org-appear-autosubmarkers t ))
+
+;;; Ugly org hooks
+(defun nicer-org ()
+  (progn
+    (+org-pretty-mode 1)
+    (hl-line-mode -1)
+    (display-line-numbers-mode -1)
+    (org-superstar-mode -1)
+    (org-indent-mode -1)))
+
+(add-hook! 'org-mode-hook  #'nicer-org)
+
+(after! org
+  (custom-set-faces!
+    '((org-block) :background nil))
+  (defface redd
+    '((((class color) (min-colors 88) (background light))
+       :foreground "red"))
+    "Red."
+    :group 'basic-faces)
+  (custom-set-faces!
+    '(org-level-1 :height 1.3 :weight extrabold :slant normal)
+    '(org-level-2 :height 1.2 :weight bold :slant normal)
+    '(org-level-3 :height 1.1 :weight regular :slant normal)
+    '(org-document-title
+      :family "Roboto"
+      :height 250
+      :weight medium)))
+
+(after! org
+  (setq org-emphasis-alist
+        '(("*" (bold))
+          ("/" italic)
+          ("_" underline)
+          ("=" redd)
+          ("~" code)
+          ("+" (:strike-through t))))
+  (setq org-ellipsis " ▾ ")
+  (appendq! +ligatures-extra-symbols
+            `(:checkbox      "☐"
+              :pending       "◼"
+              :checkedbox    "☑"
+              :list_property "∷"
+              :em_dash       "—"
+              :ellipses      "…"
+              :arrow_right   "→"
+              :arrow_left    "←"
+              :title         nil
+              :subtitle      "𝙩"
+              :author        "𝘼"
+              :date          "𝘿"
+              :property      ""
+              :options       "⌥"
+              :startup       "⏻"
+              :macro         "𝓜"
+              :html_head     "🅷"
+              :html          "🅗"
+              :latex_class   "🄻"
+              :latex_header  "🅻"
+              :beamer_header "🅑"
+              :latex         "🅛"
+              :attr_latex    "🄛"
+              :attr_html     "🄗"
+              :attr_org      "⒪"
+              :begin_quote   "❝"
+              :end_quote     "❞"
+              :caption       "☰"
+              :header        "›"
+              :results       "🠶"
+              :begin_export  "⏩"
+              :end_export    "⏪"
+              :properties    ""
+              :end           "∎"
+              :priority_a   ,(propertize "⚑" 'face 'all-the-icons-red)
+              :priority_b   ,(propertize "⬆" 'face 'all-the-icons-orange)
+              :priority_c   ,(propertize "■" 'face 'all-the-icons-yellow)
+              :priority_d   ,(propertize "⬇" 'face 'all-the-icons-green)
+              :priority_e   ,(propertize "❓" 'face 'all-the-icons-blue)
+              :roam_tags nil
+              :filetags nil))
+  (set-ligatures! 'org-mode
+    :merge t
+    :checkbox      "[ ]"
+    :pending       "[-]"
+    :checkedbox    "[X]"
+    :list_property "::"
+    :em_dash       "---"
+    :ellipsis      "..."
+    :arrow_right   "->"
+    :arrow_left    "<-"
+    :title         "#+title:"
+    :subtitle      "#+subtitle:"
+    :author        "#+author:"
+    :date          "#+date:"
+    :property      "#+property:"
+    :options       "#+options:"
+    :startup       "#+startup:"
+    :macro         "#+macro:"
+    :html_head     "#+html_head:"
+    :html          "#+html:"
+    :latex_class   "#+latex_class:"
+    :latex_header  "#+latex_header:"
+    :beamer_header "#+beamer_header:"
+    :latex         "#+latex:"
+    :attr_latex    "#+attr_latex:"
+    :attr_html     "#+attr_html:"
+    :attr_org      "#+attr_org:"
+    :begin_quote   "#+begin_quote"
+    :end_quote     "#+end_quote"
+    :caption       "#+caption:"
+    :header        "#+header:"
+    :begin_export  "#+begin_export"
+    :end_export    "#+end_export"
+    :results       "#+RESULTS:"
+    :property      ":PROPERTIES:"
+    :end           ":END:"
+    :priority_a    "[#A]"
+    :priority_b    "[#B]"
+    :priority_c    "[#C]"
+    :priority_d    "[#D]"
+    :priority_e    "[#E]"
+    :roam_tags     "#+roam_tags:"
+    :filetags      "#+filetags:")
+  (plist-put +ligatures-extra-symbols :name "⁍"))
+
+(with-eval-after-load 'org
+  (plist-put org-format-latex-options :background 'default))
