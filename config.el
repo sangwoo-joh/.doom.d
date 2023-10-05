@@ -480,8 +480,7 @@
   (add-to-list 'forge-alist
                '("github.sec.samsung.net"
                  "github.sec.samsung.net/api/v3"
-                 "github.sec.samsung.net"
-                 'forge-github-repository)))
+                 "github.sec.samsung.net")))
 
 ;;
 ;; magit
