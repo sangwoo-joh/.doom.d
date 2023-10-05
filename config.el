@@ -33,7 +33,6 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-sourcerer)
-(set-face-attribute 'fringe nil :background nil :inherit 'default)
 
 (defun kernel/switch-theme (theme)
   "Change theme and set fringe color to nil."
@@ -52,6 +51,21 @@
       (setq doom-theme theme)
       (load-theme doom-theme t)
       (set-face-attribute 'fringe nil :background nil :inherit 'default))))
+
+;; HACK: for some reason, setting fringe color after loading a theme doesn't work.
+;; So I use this hook to set fringe color after loading a theme.
+
+(defvar after-enable-theme-hook nil
+   "Normal hook run after enabling a theme.")
+
+(defun run-after-enable-theme-hook (&rest _args)
+   "Run `after-enable-theme-hook'."
+   (run-hooks 'after-enable-theme-hook))
+
+(advice-add 'enable-theme :after #'run-after-enable-theme-hook)
+
+(add-hook! 'after-enable-theme-hook
+  (set-face-attribute 'fringe nil :background (face-background 'default) :foreground (face-foreground 'default)))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
