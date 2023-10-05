@@ -593,7 +593,7 @@
   ;;
   ;; Magit
   ;;
-  '(magit-branch :inherit font-lock-constant-face :bold t)
+  '(magit-branch-current :inherit font-lock-constant-face :bold t)
   '(magit-diffstat-added :inherit font-lock-type-face)
   '(magit-diffstat-removed :inherit font-lock-variable-name-face)
   '(magit-hash :foreground "fg-alt")
