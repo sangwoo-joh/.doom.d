@@ -82,8 +82,7 @@
 (setq company-idle-delay nil)
 
 ;; show battery
-(unless (equal "Battery status not available"
-               (battery))
+(unless (string-match-p "battery unknown" (battery))
   (display-battery-mode 1))
 
 ;; fullscreen when starting emacs
