@@ -35,6 +35,24 @@
 (setq doom-theme 'doom-sourcerer)
 (set-face-attribute 'fringe nil :background nil :inherit 'default)
 
+(defun kernel/switch-theme (theme)
+  "Change theme and set fringe color to nil."
+  (interactive
+   (list
+    (intern (completing-read
+             "Load custom theme: "
+             (mapcar #'symbol-name
+                     (custom-available-themes))))))
+  (unless (custom-theme-name-valid-p theme)
+    (error "Invalid theme name `%s'" theme))
+  (if (eq theme doom-theme)
+      (message "Already using %s theme" theme)
+    (progn
+      (message "Switching to %s theme" theme)
+      (setq doom-theme theme)
+      (load-theme doom-theme t)
+      (set-face-attribute 'fringe nil :background nil :inherit 'default))))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
