@@ -601,6 +601,12 @@
   '(magit-process-ok :inherit font-lock-function-name-face :bold t)
   '(magit-section-heading :inherit font-lock-keyword-face :bold t)
   ;;
+  ;; Tree-Sitter
+  ;;
+  '(tree-sitter-hl-face:function :inherit font-lock-function-name-face)
+  '(tree-sitter-hl-face:type :inherit font-lock-type-face :bold t)
+  '(tree-sitter-hl-face:constructor :inherit tree-sitter-hl-face:type)
+  ;;
   ;; OCaml
   ;;
   '(tuareg-font-lock-governing-face :inherit font-lock-string-face :bold t)
