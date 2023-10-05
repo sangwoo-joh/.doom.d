@@ -644,7 +644,9 @@
 
 (use-package! org-fragtog
   :after org
-  :hook (org-mode . org-fragtog-mode))
+  :hook (org-mode . org-fragtog-mode)
+  :config
+  (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0)))
 
 (use-package! org-appear
   :after org
