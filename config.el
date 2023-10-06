@@ -811,5 +811,7 @@
 (use-package! org-roam-ui
   :after org-roam
   :config
+  (setq org-roam-ui-sync-theme t)
   (setq org-roam-ui-open-on-start nil)
-  (when IS-LINUX (setq org-roam-ui-browser-function #'xwidget-webkit-browse-url)))
+  (setq org-roam-ui-follow t)
+  (setq org-roam-ui-update-on-save t))
