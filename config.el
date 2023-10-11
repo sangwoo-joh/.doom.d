@@ -581,7 +581,7 @@
   (setq web-mode-script-padding tab-width)
   (setq web-mode-indent-style 2))
 
-(after! web
+(after! web-mode
   (add-hook! 'web-mode-hook #'kernel/unify-web-mode-spacing))
 
 (after! typescript-mode
