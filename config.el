@@ -584,6 +584,8 @@
 (after! web
   (add-hook! 'web-mode-hook #'kernel/unify-web-mode-spacing))
 
+(after! typescript-mode
+  (setq typescript-indent-level 2))
 ;;
 ;; custom faces
 ;;
