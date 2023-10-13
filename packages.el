@@ -48,7 +48,7 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-(unpin! org org-roam)
+(unpin! org org-roam ocamlformat)
 
 (package! org :recipe (:host github :repo "emacs-straight/org-mode" :branch "main"))
 (package! ag)
@@ -78,3 +78,4 @@
 
 (package! tree-sitter)
 (package! tree-sitter-langs)
+(package! ocamlformat :recipe (:host github :repo "ocaml-ppx/ocamlformat" :files ("emacs/*.el") :branch "main"))
