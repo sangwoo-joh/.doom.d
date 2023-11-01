@@ -459,6 +459,15 @@
       "M-9" #'+workspace/switch-to-8
       "M-0" #'+workspace/switch-to-9)
 
+(map! :prefix "C-c r"
+      "f" #'org-roam-node-find
+      "a" #'org-roam-alias-add
+      "u" #'org-roam-ui-open
+      "i" #'org-roam-node-insert
+      "g" #'org-roam-graph
+      "r" #'org-roam-node-random
+      "s" #'org-roam-db-sync)
+
 (map! :after copilot
       :map copilot-completion-map
       "<tab>" #'copilot-accept-completion
