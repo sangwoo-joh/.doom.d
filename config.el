@@ -462,6 +462,7 @@
 (map! :prefix "C-c r"
       "f" #'org-roam-node-find
       "a" #'org-roam-alias-add
+      "b" #'org-roam-buffer-toggle
       "u" #'org-roam-ui-open
       "i" #'org-roam-node-insert
       "g" #'org-roam-graph
