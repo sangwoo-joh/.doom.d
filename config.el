@@ -579,6 +579,7 @@
 (after! python
   (setq python-shell-interpreter "python3"
         python-shell-interpreter-args "-i --simple-prompt")
+  (setq python-indent-def-block-scale 1)
   (remove-hook! 'python-mode-hook #'anaconda-mode))
 
 (after! pipenv
