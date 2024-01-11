@@ -499,6 +499,9 @@
 (map! :map org-mode-map
       "C-c C-x s" #'org-edit-src-code)
 
+(map! :map eshell-mode-map
+      "C-l" #'recenter-top-bottom)
+
 ;; ibuffer
 ;; % n: mark buffers by their name, using a regexp
 ;; % m: mark buffers by their major mode, using a regexp
