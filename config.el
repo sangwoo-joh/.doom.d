@@ -469,6 +469,9 @@
       "r" #'org-roam-node-random
       "s" #'org-roam-db-sync)
 
+(map! :prefix "C-c v"
+      "b" #'magit-blame-addition)
+
 (map! :after copilot
       :map copilot-completion-map
       "<tab>" #'copilot-accept-completion
