@@ -682,9 +682,9 @@
   :after org
   :hook (org-mode . olivetti-mode)
   :config (setq olivetti-min-body-width 50
-                olivetti-body-width 80
+                olivetti-body-width 120
                 olivetti-style 'fancy
-                olivetti-margin-width 12))
+                olivetti-margin-width 5))
 
 ;;; Ugly org hooks
 (defun nicer-org ()
