@@ -842,3 +842,10 @@
   (setq org-roam-ui-open-on-start nil)
   (setq org-roam-ui-follow t)
   (setq org-roam-ui-update-on-save t))
+
+(setq zoneinfo-style-world-list
+      '(("Asia/Seoul" "Seoul")
+        ("Europe/London" "London")
+        ("America/Los_Angeles" "Seattle")
+        ("America/New_York" "New York")))
+(setq world-clock-time-format "%Y-%m-%d %H:%M:%S %Z")
