@@ -848,4 +848,4 @@
         ("Europe/London" "London")
         ("America/Los_Angeles" "Seattle")
         ("America/New_York" "New York")))
-(setq world-clock-time-format "%Y-%m-%d %H:%M:%S %Z")
+(setq world-clock-time-format "%A %Y-%m-%d %H:%M:%S %Z")
