@@ -60,8 +60,8 @@
 (package! fzf)
 (package! centered-window)
 (package! switch-window)
-(package! copilot
-  :recipe (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))
+;; (package! copilot
+;;   :recipe (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))
 (package! clang-format)
 (package! graphviz-dot-mode)
 (package! ssh-config-mode)
