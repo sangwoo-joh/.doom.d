@@ -160,6 +160,8 @@
 
 (set-selection-coding-system 'utf-8)
 
+(global-display-line-numbers-mode t)
+
 (when window-system
   (global-unset-key (kbd "C-z")))
 
