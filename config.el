@@ -479,10 +479,10 @@
 (map! :prefix "C-c v"
       "b" #'magit-blame-addition)
 
-(map! :after copilot
-      :map copilot-completion-map
-      "<tab>" #'copilot-accept-completion
-      "TAB" #'copilot-accept-completion)
+;; (map! :after copilot
+;;       :map copilot-completion-map
+;;       "<tab>" #'copilot-accept-completion
+;;       "TAB" #'copilot-accept-completion)
 
 (map! :after dired
       :map dired-mode-map
@@ -576,7 +576,7 @@
 ;;
 ;; kernel hooks
 ;;
-(add-hook! 'prog-mode-hook #'copilot-mode)
+;; (add-hook! 'prog-mode-hook #'copilot-mode)
 
 (defun nicer-md ()
   (progn
