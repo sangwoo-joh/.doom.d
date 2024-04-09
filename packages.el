@@ -77,5 +77,5 @@
 (package! org-roam-ui :recipe (:host github :repo "org-roam/org-roam-ui" :files ("*.el" "out")))
 
 (package! tree-sitter)
-(package! tree-sitter-langs)
+(package! tree-sitter-langs :pin "3912177e4363105d2358cb95812b802560d96f53") ;; pinned at 0.12.94
 (package! ocamlformat :recipe (:host github :repo "ocaml-ppx/ocamlformat" :files ("emacs/*.el") :branch "main"))
