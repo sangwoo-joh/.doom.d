@@ -831,6 +831,7 @@
   (progn
     (setq-local oliveitti-body-width 50)
     (olivetti-mode 1)
+    (centered-window-mode nil)
     (set-face-background 'magit-section-highlight (face-background 'default))))
 
 (after! org-roam
