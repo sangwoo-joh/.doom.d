@@ -48,9 +48,8 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-(unpin! org org-roam ocamlformat)
+(unpin! org-roam ocamlformat)
 
-(package! org :recipe (:host github :repo "emacs-straight/org-mode" :branch "main"))
 (package! ag)
 (package! wgrep)
 (package! wgrep-ag)
@@ -71,7 +70,6 @@
 (package! magit-todos :disable t)
 
 (package! org-fragtog)
-(package! org-appear)
 (package! olivetti)
 (package! org-roam :recipe (:host github :repo "org-roam/org-roam"))
 (package! org-roam-ui :recipe (:host github :repo "org-roam/org-roam-ui" :files ("*.el" "out")))
