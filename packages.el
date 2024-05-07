@@ -69,7 +69,6 @@
 (package! magit-todos :disable t)
 
 (package! org-fragtog)
-(package! olivetti)
 (package! org-roam :recipe (:host github :repo "org-roam/org-roam"))
 (package! org-roam-ui :recipe (:host github :repo "org-roam/org-roam-ui" :files ("*.el" "out")))
 

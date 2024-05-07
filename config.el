@@ -579,7 +579,6 @@
 (defun nicer-md ()
   (progn
     (display-line-numbers-mode -1)
-    (olivetti-mode 1)
     (setq markdown-header-scaling t)
     (markdown-toggle-markup-hiding)
     (markdown-toggle-fontify-code-blocks-natively)
@@ -682,14 +681,6 @@
            org-appear-autolinks t
            org-appear-autoentities t
            org-appear-autosubmarkers t ))
-
-(use-package! olivetti
-  :after org
-  :hook (org-mode . olivetti-mode)
-  :config (setq olivetti-min-body-width 50
-                olivetti-body-width 120
-                olivetti-style 'fancy
-                olivetti-margin-width 5))
 
 ;;; Ugly org hooks
 (defun nicer-org ()
@@ -826,15 +817,6 @@
   (setq org-roam-directory "~/.roam")
   (org-roam-db-autosync-enable)
   (setq org-roam-completion-everywhere t))
-
-(defun nicer-roam ()
-  (progn
-    (setq-local oliveitti-body-width 50)
-    (olivetti-mode 1)
-    (set-face-background 'magit-section-highlight (face-background 'default))))
-
-(after! org-roam
-  (add-hook! 'org-roam-mode-hook #'nicer-roam))
 
 (use-package! org-roam-ui
   :after org-roam
