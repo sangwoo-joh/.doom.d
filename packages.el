@@ -57,7 +57,6 @@
 (package! hungry-delete)
 (package! iedit)
 (package! fzf)
-(package! centered-window)
 (package! switch-window)
 ;; (package! copilot
 ;;   :recipe (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))

@@ -423,8 +423,6 @@
       ;; multiple-cursors
       "C->" #'mc/mark-next-like-this
       "C-<" #'mc/mark-previous-like-this
-      ;; centered-window
-      "C-M-l" #'centered-window-mode
       ;; switch-window
       "C-x o" #'switch-window
       "C-x 1" #'switch-window-then-maximize
@@ -833,7 +831,6 @@
   (progn
     (setq-local oliveitti-body-width 50)
     (olivetti-mode 1)
-    (centered-window-mode t)
     (set-face-background 'magit-section-highlight (face-background 'default))))
 
 (after! org-roam
