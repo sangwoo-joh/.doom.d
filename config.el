@@ -580,7 +580,6 @@
   (progn
     (display-line-numbers-mode -1)
     (setq markdown-header-scaling t)
-    (markdown-toggle-markup-hiding)
     (markdown-toggle-fontify-code-blocks-natively)
     (highlight-indent-guides-mode -1)))
 
