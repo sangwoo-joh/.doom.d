@@ -686,7 +686,7 @@
 (defun nicer-org ()
   (progn
     (+org-pretty-mode 1)
-    (display-line-numbers-mode -1)
+    (setq left-margin-width 10 right-margin-width 10)
     (highlight-indent-guides-mode nil)))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
