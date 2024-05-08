@@ -709,8 +709,6 @@
       :weight medium)))
 
 (after! org
-  (setq-default org-display-custom-times t)
-  (setq org-time-stamp-custom-formats '("<%a %b %e %Y>" . "<%a %d-%b %Y>"))
   (setq org-emphasis-alist
         '(("*" (bold))
           ("/" italic)
