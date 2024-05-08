@@ -578,6 +578,7 @@
 
 (defun nicer-md ()
   (progn
+    (setq left-margin-width 10 right-margin-width 10)
     (display-line-numbers-mode -1)
     (setq markdown-header-scaling t)
     (markdown-toggle-fontify-code-blocks-natively)
