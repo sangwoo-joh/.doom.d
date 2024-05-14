@@ -686,7 +686,7 @@
 (defun nicer-org ()
   (progn
     (+org-pretty-mode 1)
-    (setq left-margin-width 10 right-margin-width 10)
+    (setq left-margin-width 1 right-margin-width 1)
     (highlight-indent-guides-mode nil)))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
@@ -702,7 +702,8 @@
   (custom-set-faces!
     '(org-level-1 :height 1.3 :weight extrabold :slant normal)
     '(org-level-2 :height 1.2 :weight bold :slant normal)
-    '(org-level-3 :height 1.1 :weight regular :slant normal)
+    '(org-level-3 :height 1.2 :weight regular :slant normal)
+    '(org-level-4 :height 1.1 :weight regular :slant normal)
     '(org-document-title
       :family "Roboto"
       :height 250
