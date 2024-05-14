@@ -690,7 +690,6 @@
     (highlight-indent-guides-mode nil)))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
-
 (after! org
   (custom-set-faces!
     '((org-block) :background nil))
@@ -700,10 +699,10 @@
     "Red."
     :group 'basic-faces)
   (custom-set-faces!
-    '(org-level-1 :height 1.3 :weight extrabold :slant normal)
-    '(org-level-2 :height 1.2 :weight bold :slant normal)
-    '(org-level-3 :height 1.2 :weight regular :slant normal)
-    '(org-level-4 :height 1.1 :weight regular :slant normal)
+    '(org-level-1 :height 1.4 :weight extrabold :slant normal :foreground "cyan")
+    '(org-level-2 :height 1.3 :weight bold :slant normal :foreground "violet")
+    '(org-level-3 :height 1.2 :weight regular :slant normal :foreground "magenta")
+    '(org-level-4 :height 1.1 :weight regular :slant normal :foreground "teal")
     '(org-document-title
       :family "Roboto"
       :height 250
