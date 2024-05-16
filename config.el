@@ -190,7 +190,7 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun remove-dos-eol ()
+(defun kernel/remove-dos-eol ()
   "HIDE ^M IN EACH NEWLINES."
   (interactive)
   (setq buffer-display-table (make-display-table))
