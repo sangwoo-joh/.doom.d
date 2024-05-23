@@ -419,6 +419,7 @@
       "C-c :" #'uncomment-region
       "C-c +" #'kernel/increment-number-at-point
       "C-c -" #'kernel/decrement-number-at-point
+      "C-c C-r" #'revert-buffer
       "M-Q" #'kernel/unfill-paragraph
       ;; multiple-cursors
       "C->" #'mc/mark-next-like-this
