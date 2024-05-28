@@ -631,8 +631,10 @@
   ;;
   ;; Tree-Sitter
   ;;
+  '(tree-sitter-hl-face:keyword :inherit font-lock-keyword-face)
   '(tree-sitter-hl-face:function :inherit font-lock-function-name-face)
-  '(tree-sitter-hl-face:type :inherit font-lock-type-face :bold t)
+  '(tree-sitter-hl-face:type :inherit font-lock-type-face)
+  '(tree-sitter-hl-face:property :inherit font-lock-constant-face :foreground "cyan" :italic t)
   '(tree-sitter-hl-face:constructor :inherit tree-sitter-hl-face:type)
   ;;
   ;; OCaml
