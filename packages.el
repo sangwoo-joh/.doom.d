@@ -75,3 +75,6 @@
 (package! tree-sitter)
 (package! tree-sitter-langs) ;; :pin "3912177e4363105d2358cb95812b802560d96f53") ;; pinned at 0.12.94
 (package! ocamlformat :recipe (:host github :repo "ocaml-ppx/ocamlformat" :files ("emacs/*.el") :branch "main"))
+(package! avy)
+(package! embark)
+(package! jinx)
