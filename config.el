@@ -498,6 +498,7 @@
       "C-c C-o" #'merlin-eldoc-jump-to-next-occurrence)
 
 (add-hook! tuareg-mode (merlin-mode))
+(add-hook! tuareg-mode (opam-switch-mode))
 
 (map! :map (c++-mode-map c-mode-map)
       "M-." #'rtags-find-symbol-at-point
