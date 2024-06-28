@@ -478,6 +478,9 @@
 (map! :prefix "C-c v"
       "b" #'magit-blame-addition)
 
+(map! :prefix "C-c s"
+      "$" #'(lambda () (interactive) (insert "£")))
+
 ;; (map! :after copilot
 ;;       :map copilot-completion-map
 ;;       "<tab>" #'copilot-accept-completion
