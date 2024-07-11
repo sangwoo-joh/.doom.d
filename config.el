@@ -475,6 +475,11 @@
       "r" #'org-roam-node-random
       "s" #'org-roam-db-sync)
 
+(map! :prefix "C-c b"
+      "f" #'bookmark-jump
+      "b" #'bookmark-set
+      "l" #'list-bookmarks)
+
 (map! :prefix "C-c v"
       "b" #'magit-blame-addition)
 
