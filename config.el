@@ -496,10 +496,14 @@
       "b" #'dired-up-directory
       "W" #'kernel/count-marked-items)
 
+;; NOTE: both markdown-mode-map and org-mode-map bound "C-c '" to "edit source code block"
 (map! :map markdown-mode-map
       "C-c C-c C-l" #'kernel/ps/md-create-leetcode-document
       "C-c C-c C-o" #'kernel/ps/md-goto-leetcode-problem
       "M-." #'kernel/ps/md-goto-leetcode-document)
+
+(map! :map org-mode-map
+      "C-c c b" #'org-cycle-list-bullet)
 
 (map! :map tuareg-mode-map
       "C-c C-f" #'ocamlformat
@@ -513,10 +517,6 @@
       "M-," #'xref-go-back
       "C-," #'xref-go-forward
       "C-c C-t" #'rtags-symbol-type)
-
-(map! :map org-mode-map
-      "C-c C-x s" #'org-edit-src-code
-      "C-c c b" #'org-cycle-list-bullet)
 
 (map! :map eshell-mode-map
       "C-l" #'recenter-top-bottom)
