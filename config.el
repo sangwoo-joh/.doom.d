@@ -515,7 +515,8 @@
       "C-c C-t" #'rtags-symbol-type)
 
 (map! :map org-mode-map
-      "C-c C-x s" #'org-edit-src-code)
+      "C-c C-x s" #'org-edit-src-code
+      "C-c c b" #'org-cycle-list-bullet)
 
 (map! :map eshell-mode-map
       "C-l" #'recenter-top-bottom)
