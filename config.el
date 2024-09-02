@@ -129,14 +129,14 @@
 
 ;; Font settings
 (when IS-LINUX
-  (setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :size 18))
+  (setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :height 18))
   (add-hook! 'after-setting-font-hook
-    (set-fontset-font "fontset-default" 'hangul (font-spec :family "D2Coding" :size 18))))
+    (set-fontset-font "fontset-default" 'hangul (font-spec :family "D2Coding" :height 18))))
 
 (when IS-MAC
-  (setq doom-font (font-spec :family "Menlo" :size 16))
+  (setq doom-font (font-spec :family "Menlo" :height 16))
   (add-hook! 'after-setting-font-hook
-    (set-fontset-font "fontset-default" 'hangul (font-spec :family "Menlo" :size 16))))
+    (set-fontset-font "fontset-default" 'hangul (font-spec :family "Menlo" :height 16))))
 
 
 (setq-default indent-tabs-mode nil)
