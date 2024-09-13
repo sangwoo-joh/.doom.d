@@ -595,7 +595,8 @@
     (markdown-toggle-fontify-code-blocks-natively)
     (highlight-indent-guides-mode -1)))
 
-(add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook #'nicer-md)
+;; turn off for work
+;; (add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook #'nicer-md)
 
 (after! python
   (setq python-shell-interpreter "python3"
