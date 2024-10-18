@@ -597,7 +597,7 @@
     (highlight-indent-guides-mode -1)))
 
 ;; turn off for work
-(add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook #'nicer-md)
+(add-hook! 'markdown-mode-hook #'nicer-md)
 
 (after! python
   (setq python-shell-interpreter "python3"
