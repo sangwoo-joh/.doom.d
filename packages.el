@@ -79,3 +79,4 @@
 (package! embark)
 (package! jinx)
 (package! opam-switch-mode)
+(package! olivetti)

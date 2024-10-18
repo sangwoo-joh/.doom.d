@@ -589,14 +589,15 @@
 
 (defun nicer-md ()
   (progn
-    (setq left-margin-width 10 right-margin-width 10)
+    ;; (setq left-margin-width 10 right-margin-width 10)
+    (olivetti-mode t)
     (display-line-numbers-mode -1)
     (setq markdown-header-scaling t)
     (markdown-toggle-fontify-code-blocks-natively)
     (highlight-indent-guides-mode -1)))
 
 ;; turn off for work
-;; (add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook #'nicer-md)
+(add-hook! 'markdown-mode-hook #'kernel/md/add-save-with-timestamp-hook #'nicer-md)
 
 (after! python
   (setq python-shell-interpreter "python3"
