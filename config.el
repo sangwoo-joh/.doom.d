@@ -591,6 +591,7 @@
   (progn
     ;; (setq left-margin-width 10 right-margin-width 10)
     (olivetti-mode t)
+    (olivetti-set-width 0.5)
     (display-line-numbers-mode -1)
     (setq markdown-header-scaling t)
     (markdown-toggle-fontify-code-blocks-natively)
@@ -693,6 +694,9 @@
 (defun nicer-org ()
   (progn
     (+org-pretty-mode 1)
+    (olivetti-mode t)
+    (olivetti-set-width 0.5)
+    (display-line-numbers-mode -1)
     (setq left-margin-width 1 right-margin-width 1)
     (highlight-indent-guides-mode nil)))
 
