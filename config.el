@@ -710,13 +710,12 @@
     "Red."
     :group 'basic-faces)
   (custom-set-faces!
-    '(org-level-1 :height 1.3 :weight extrabold :slant normal :foreground "cyan")
-    '(org-level-2 :height 1.2 :weight bold :slant normal :foreground "cyan")
-    '(org-level-3 :height 1.15 :weight regular :slant normal :foreground "cyan")
-    '(org-level-4 :height 1.1 :weight regular :slant normal :foreground "cyan")
+    '(org-level-1 :height 1.3 :weight extrabold :slant normal :foreground "green")
+    '(org-level-2 :height 1.2 :weight bold :slant normal :foreground "green")
+    '(org-level-3 :height 1.15 :weight regular :slant normal :foreground "green")
+    '(org-level-4 :height 1.1 :weight regular :slant normal :foreground "green")
     '(org-document-title
-      :family "Roboto"
-      :foreground "#ccff99"
+      :foreground "yellow"
       :height 300
       :weight medium)))
 
