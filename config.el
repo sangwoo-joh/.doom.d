@@ -595,7 +595,7 @@
     (display-line-numbers-mode -1)
     (setq markdown-header-scaling t)
     (markdown-toggle-fontify-code-blocks-natively)
-    (highlight-indent-guides-mode -1)))
+    (when IS-LINUX (highlight-indent-guides-mode -1))))
 
 ;; turn off for work
 (add-hook! 'markdown-mode-hook #'nicer-md)
@@ -698,7 +698,7 @@
     (olivetti-set-width 0.8)
     (display-line-numbers-mode -1)
     (setq left-margin-width 1 right-margin-width 1)
-    (highlight-indent-guides-mode nil)))
+    (when IS-LINUX (highlight-indent-guides-mode nil))))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
 
