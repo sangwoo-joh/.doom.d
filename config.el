@@ -701,6 +701,12 @@
     (highlight-indent-guides-mode nil)))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
+
+(defun nicer-pdf-view ()
+  (progn
+    (display-line-numbers-mode -1)))
+(add-hook! 'pdf-view-mode-hook #'nicer-pdf-view)
+
 (after! org
   (custom-set-faces!
     '((org-block) :background nil))
