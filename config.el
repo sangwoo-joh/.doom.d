@@ -32,7 +32,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-dark+)
+;; (setq doom-theme 'doom-dark+)
+(setq doom-theme 'leuven)
 
 (defun kernel/switch-theme (theme)
   "Change theme and set fringe color to nil."
@@ -714,12 +715,11 @@
     "Red."
     :group 'basic-faces)
   (custom-set-faces!
-    '(org-level-1 :height 1.3 :weight extrabold :slant normal :foreground "green")
-    '(org-level-2 :height 1.2 :weight bold :slant normal :foreground "green")
-    '(org-level-3 :height 1.15 :weight regular :slant normal :foreground "green")
-    '(org-level-4 :height 1.1 :weight regular :slant normal :foreground "green")
+    '(org-level-1 :height 1.3 :weight extrabold :slant normal)
+    '(org-level-2 :height 1.2 :weight bold :slant normal)
+    '(org-level-3 :height 1.15 :weight regular :slant normal)
+    '(org-level-4 :height 1.1 :weight regular :slant normal)
     '(org-document-title
-      :foreground "yellow"
       :height 300
       :weight medium)))
 
