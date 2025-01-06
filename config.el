@@ -721,7 +721,7 @@
     '(org-level-4 :height 1.1 :weight regular :slant normal)
     '(org-document-title
       :height 300
-      :weight medium)))
+      :weight bold)))
 
 (after! org
   (setq org-emphasis-alist
