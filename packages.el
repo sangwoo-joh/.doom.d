@@ -80,4 +80,4 @@
 (package! jinx)
 (package! opam-switch-mode)
 (package! olivetti)
-(package! all-the-icons)
+;; (package! all-the-icons) -> need to run (nerd-icons-install-fonts)
