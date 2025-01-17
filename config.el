@@ -381,6 +381,11 @@
   (message "Total items: %d" (length (dired-get-marked-files)))
   (dired-toggle-marks))
 
+(defun kernel/insert-lambda ()
+  "Add lambda"
+  (interactive)
+  (insert "lambda"))
+
 ;; Selecting all buffer is already mapped to C-x h (mark-whole-buffer)
 
 ;;
@@ -487,6 +492,8 @@
 (map! :prefix "C-c s"
       "$" #'(lambda () (interactive) (insert "£")))
 
+(map! :prefix "C-c i"
+      "l" #'kernel/insert-lambda)
 ;; (map! :after copilot
 ;;       :map copilot-completion-map
 ;;       "<tab>" #'copilot-accept-completion
