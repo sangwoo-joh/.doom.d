@@ -704,6 +704,8 @@
     (olivetti-mode t)
     (olivetti-set-width 0.8)
     (display-line-numbers-mode -1)
+    (org-latex-preview)
+    (org-toggle-inline-images)
     (setq left-margin-width 1 right-margin-width 1)))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
