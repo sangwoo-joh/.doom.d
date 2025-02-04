@@ -381,6 +381,7 @@
   (message "Total items: %d" (length (dired-get-marked-files)))
   (dired-toggle-marks))
 
+
 ;; Selecting all buffer is already mapped to C-x h (mark-whole-buffer)
 
 ;;
@@ -487,61 +488,108 @@
 (map! :prefix "C-c s"
       "$" #'(lambda () (interactive) (insert "£")))
 
-;; Greek letters
-(map! :prefix "C-c g"
-      "a" #'(lambda () (interactive (insert "alpha")))
-      "b" #'(lambda () (interactive (insert "beta")))
-      "c" #'(lambda () (interactive (insert "chi")))
-      "d" #'(lambda () (interactive (insert "delta")))
-      "e" #'(lambda () (interactive (insert "epsilon")))
-      "f" #'(lambda () (interactive (insert "phi")))
-      "g" #'(lambda () (interactive (insert "gamma")))
-      "h" #'(lambda () (interactive (insert "eta")))
-      "i" #'(lambda () (interactive (insert "iota")))
-      ;; "j" #'(lambda () (interactive (insert "")))
-      "k" #'(lambda () (interactive (insert "kappa")))
-      "l" #'(lambda () (interactive (insert "lambda")))
-      "m" #'(lambda () (interactive (insert "mu")))
-      "n" #'(lambda () (interactive (insert "nu")))
-      "o" #'(lambda () (interactive (insert "omicron")))
-      "p" #'(lambda () (interactive (insert "pi")))
-      ;; "q" #'(lambda () (interactive (insert "")))
-      "r" #'(lambda () (interactive (insert "rho")))
-      "s" #'(lambda () (interactive (insert "sigma")))
-      "t" #'(lambda () (interactive (insert "theta")))
-      "u" #'(lambda () (interactive (insert "tau")))
-      "v" #'(lambda () (interactive (insert "psi")))
-      "w" #'(lambda () (interactive (insert "omega")))
-      "x" #'(lambda () (interactive (insert "xi")))
-      "y" #'(lambda () (interactive (insert "upsilon")))
-      "z" #'(lambda () (interactive (insert "zeta")))
+;; Greek letters macro
 
-      "A" #'(lambda () (interactive (insert "Alpha")))
-      "B" #'(lambda () (interactive (insert "Beta")))
-      "C" #'(lambda () (interactive (insert "Chi")))
-      "D" #'(lambda () (interactive (insert "Delta")))
-      "E" #'(lambda () (interactive (insert "Epsilon")))
-      "F" #'(lambda () (interactive (insert "Phi")))
-      "G" #'(lambda () (interactive (insert "Gamma")))
-      "H" #'(lambda () (interactive (insert "Eta")))
-      "I" #'(lambda () (interactive (insert "Iota")))
-      ;; "J" #'(lambda () (interactive (insert "")))
-      "K" #'(lambda () (interactive (insert "Kappa")))
-      "L" #'(lambda () (interactive (insert "Lambda")))
-      "M" #'(lambda () (interactive (insert "Mu")))
-      "N" #'(lambda () (interactive (insert "Nu")))
-      "O" #'(lambda () (interactive (insert "Omicron")))
-      "P" #'(lambda () (interactive (insert "Pi")))
-      ;; "Q" #'(lambda () (interactive (insert "")))
-      "R" #'(lambda () (interactive (insert "Rho")))
-      "S" #'(lambda () (interactive (insert "Sigma")))
-      "T" #'(lambda () (interactive (insert "Theta")))
-      "U" #'(lambda () (interactive (insert "Tau")))
-      "V" #'(lambda () (interactive (insert "Psi")))
-      "W" #'(lambda () (interactive (insert "Omega")))
-      "X" #'(lambda () (interactive (insert "Xi")))
-      "Y" #'(lambda () (interactive (insert "Upsilon")))
-      "Z" #'(lambda () (interactive (insert "Zeta")))
+(defun kernel/alpha () (interactive (insert "alpha")))
+(defun kernel/beta () (interactive (insert "beta")))
+(defun kernel/chi () (interactive (insert "chi")))
+(defun kernel/delta () (interactive (insert "delta")))
+(defun kernel/epsilon () (interactive (insert "epsilon")))
+(defun kernel/phi () (interactive (insert "phi")))
+(defun kernel/gamma () (interactive (insert "gamma")))
+(defun kernel/eta () (interactive (insert "eta")))
+(defun kernel/iota () (interactive (insert "iota")))
+(defun kernel/kappa () (interactive (insert "kappa")))
+(defun kernel/lambda () (interactive (insert "lambda")))
+(defun kernel/mu () (interactive (insert "mu")))
+(defun kernel/nu () (interactive (insert "nu")))
+(defun kernel/omicron () (interactive (insert "omicron")))
+(defun kernel/pi () (interactive (insert "pi")))
+(defun kernel/rho () (interactive (insert "rho")))
+(defun kernel/sigma () (interactive (insert "sigma")))
+(defun kernel/theta () (interactive (insert "theta")))
+(defun kernel/tau () (interactive (insert "tau")))
+(defun kernel/psi () (interactive (insert "psi")))
+(defun kernel/omega () (interactive (insert "omega")))
+(defun kernel/xi () (interactive (insert "xi")))
+(defun kernel/upsilon () (interactive (insert "upsilon")))
+(defun kernel/zeta () (interactive (insert "zeta")))
+
+(defun kernel/Alpha () (interactive (insert "Alpha")))
+(defun kernel/Beta () (interactive (insert "Beta")))
+(defun kernel/Chi () (interactive (insert "Chi")))
+(defun kernel/Delta () (interactive (insert "Delta")))
+(defun kernel/Epsilon () (interactive (insert "Epsilon")))
+(defun kernel/Phi () (interactive (insert "Phi")))
+(defun kernel/Gamma () (interactive (insert "Gamma")))
+(defun kernel/Eta () (interactive (insert "Eta")))
+(defun kernel/Iota () (interactive (insert "Iota")))
+(defun kernel/Kappa () (interactive (insert "Kappa")))
+(defun kernel/Lambda () (interactive (insert "Lambda")))
+(defun kernel/Mu () (interactive (insert "Mu")))
+(defun kernel/Nu () (interactive (insert "Nu")))
+(defun kernel/Omicron () (interactive (insert "Omicron")))
+(defun kernel/Pi () (interactive (insert "Pi")))
+(defun kernel/Rho () (interactive (insert "Rho")))
+(defun kernel/Sigma () (interactive (insert "Sigma")))
+(defun kernel/Theta () (interactive (insert "Theta")))
+(defun kernel/Tau () (interactive (insert "Tau")))
+(defun kernel/Psi () (interactive (insert "Psi")))
+(defun kernel/Omega () (interactive (insert "Omega")))
+(defun kernel/Xi () (interactive (insert "Xi")))
+(defun kernel/Upsilon () (interactive (insert "Upsilon")))
+(defun kernel/Zeta () (interactive (insert "Zeta")))
+
+(map! :prefix "C-c g"
+      "a" #'kernel/alpha
+      "b" #'kernel/beta
+      "c" #'kernel/chi
+      "d" #'kernel/delta
+      "e" #'kernel/epsilon
+      "f" #'kernel/phi
+      "g" #'kernel/gamma
+      "h" #'kernel/eta
+      "i" #'kernel/iota
+      "k" #'kernel/kappa
+      "l" #'kernel/lambda
+      "m" #'kernel/mu
+      "n" #'kernel/nu
+      "o" #'kernel/omicron
+      "p" #'kernel/pi
+      "r" #'kernel/rho
+      "s" #'kernel/sigma
+      "t" #'kernel/theta
+      "u" #'kernel/tau
+      "v" #'kernel/psi
+      "w" #'kernel/omega
+      "x" #'kernel/xi
+      "y" #'kernel/upsilon
+      "z" #'kernel/zeta
+
+      "A" #'kernel/Alpha
+      "B" #'kernel/Beta
+      "C" #'kernel/Chi
+      "D" #'kernel/Delta
+      "E" #'kernel/Epsilon
+      "F" #'kernel/Phi
+      "G" #'kernel/Gamma
+      "H" #'kernel/Eta
+      "I" #'kernel/Iota
+      "K" #'kernel/Kappa
+      "L" #'kernel/Lambda
+      "M" #'kernel/Mu
+      "N" #'kernel/Nu
+      "O" #'kernel/Omicron
+      "P" #'kernel/Pi
+      "R" #'kernel/Rho
+      "S" #'kernel/Sigma
+      "T" #'kernel/Theta
+      "U" #'kernel/Tau
+      "V" #'kernel/Psi
+      "W" #'kernel/Omega
+      "X" #'kernel/Xi
+      "Y" #'kernel/Upsilon
+      "Z" #'kernel/Zeta
 )
 
 
