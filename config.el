@@ -381,11 +381,6 @@
   (message "Total items: %d" (length (dired-get-marked-files)))
   (dired-toggle-marks))
 
-(defun kernel/insert-lambda ()
-  "Add lambda"
-  (interactive)
-  (insert "lambda"))
-
 ;; Selecting all buffer is already mapped to C-x h (mark-whole-buffer)
 
 ;;
@@ -492,8 +487,64 @@
 (map! :prefix "C-c s"
       "$" #'(lambda () (interactive) (insert "£")))
 
-(map! :prefix "C-c i"
-      "l" #'kernel/insert-lambda)
+;; Greek letters
+(map! :prefix "C-c g"
+      "a" #'(lambda () (interactive (insert "alpha")))
+      "b" #'(lambda () (interactive (insert "beta")))
+      "c" #'(lambda () (interactive (insert "chi")))
+      "d" #'(lambda () (interactive (insert "delta")))
+      "e" #'(lambda () (interactive (insert "epsilon")))
+      "f" #'(lambda () (interactive (insert "phi")))
+      "g" #'(lambda () (interactive (insert "gamma")))
+      "h" #'(lambda () (interactive (insert "eta")))
+      "i" #'(lambda () (interactive (insert "iota")))
+      ;; "j" #'(lambda () (interactive (insert "")))
+      "k" #'(lambda () (interactive (insert "kappa")))
+      "l" #'(lambda () (interactive (insert "lambda")))
+      "m" #'(lambda () (interactive (insert "mu")))
+      "n" #'(lambda () (interactive (insert "nu")))
+      "o" #'(lambda () (interactive (insert "omicron")))
+      "p" #'(lambda () (interactive (insert "pi")))
+      ;; "q" #'(lambda () (interactive (insert "")))
+      "r" #'(lambda () (interactive (insert "rho")))
+      "s" #'(lambda () (interactive (insert "sigma")))
+      "t" #'(lambda () (interactive (insert "theta")))
+      "u" #'(lambda () (interactive (insert "tau")))
+      "v" #'(lambda () (interactive (insert "psi")))
+      "w" #'(lambda () (interactive (insert "omega")))
+      "x" #'(lambda () (interactive (insert "xi")))
+      "y" #'(lambda () (interactive (insert "upsilon")))
+      "z" #'(lambda () (interactive (insert "zeta")))
+
+      "A" #'(lambda () (interactive (insert "Alpha")))
+      "B" #'(lambda () (interactive (insert "Beta")))
+      "C" #'(lambda () (interactive (insert "Chi")))
+      "D" #'(lambda () (interactive (insert "Delta")))
+      "E" #'(lambda () (interactive (insert "Epsilon")))
+      "F" #'(lambda () (interactive (insert "Phi")))
+      "G" #'(lambda () (interactive (insert "Gamma")))
+      "H" #'(lambda () (interactive (insert "Eta")))
+      "I" #'(lambda () (interactive (insert "Iota")))
+      ;; "J" #'(lambda () (interactive (insert "")))
+      "K" #'(lambda () (interactive (insert "Kappa")))
+      "L" #'(lambda () (interactive (insert "Lambda")))
+      "M" #'(lambda () (interactive (insert "Mu")))
+      "N" #'(lambda () (interactive (insert "Nu")))
+      "O" #'(lambda () (interactive (insert "Omicron")))
+      "P" #'(lambda () (interactive (insert "Pi")))
+      ;; "Q" #'(lambda () (interactive (insert "")))
+      "R" #'(lambda () (interactive (insert "Rho")))
+      "S" #'(lambda () (interactive (insert "Sigma")))
+      "T" #'(lambda () (interactive (insert "Theta")))
+      "U" #'(lambda () (interactive (insert "Tau")))
+      "V" #'(lambda () (interactive (insert "Psi")))
+      "W" #'(lambda () (interactive (insert "Omega")))
+      "X" #'(lambda () (interactive (insert "Xi")))
+      "Y" #'(lambda () (interactive (insert "Upsilon")))
+      "Z" #'(lambda () (interactive (insert "Zeta")))
+)
+
+
 ;; (map! :after copilot
 ;;       :map copilot-completion-map
 ;;       "<tab>" #'copilot-accept-completion
