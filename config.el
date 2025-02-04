@@ -496,9 +496,9 @@
   (fset
    (intern (format "kernel/%s" (symbol-name letter)))
    (lambda
-     (&optional tex)
+     ()
      (interactive)
-     (insert (format "%s%s" (if tex "\\" "") (symbol-name letter))))))
+     (insert (format "%s" (symbol-name letter))))))
 
 (setq greeks '(alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu
                nu xi omicron pi rho sigma tau upsilon phi chi psi omega))
