@@ -498,16 +498,6 @@
    (lambda
      ()
      (interactive)
-     (insert (format "%s" (symbol-name letter))))))
-
-(defun kernel/make-greek-letter-org-mode-macro (letter)
-  "Return a closure to put greet letter"
-  (interactive)
-  (fset
-   (intern (format "kernel/org-%s" (symbol-name letter)))
-   (lambda
-     ()
-     (interactive)
      (insert (format "\\%s" (symbol-name letter))))))
 
 (setq greeks '(alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu
@@ -517,60 +507,6 @@
 
 (mapc #'kernel/make-greek-letter-macro greeks)
 (mapc #'kernel/make-greek-letter-macro Greeks)
-(mapc #'kernel/make-greek-letter-org-mode-macro greeks)
-(mapc #'kernel/make-greek-letter-org-mode-macro Greeks)
-
-(map! :prefix "C-c g"
-      "a" #'kernel/org-alpha
-      "b" #'kernel/org-beta
-      "c" #'kernel/org-chi
-      "d" #'kernel/org-delta
-      "e" #'kernel/org-epsilon
-      "f" #'kernel/org-phi
-      "g" #'kernel/org-gamma
-      "h" #'kernel/org-eta
-      "i" #'kernel/org-iota
-      "k" #'kernel/org-kappa
-      "l" #'kernel/org-lambda
-      "m" #'kernel/org-mu
-      "n" #'kernel/org-nu
-      "o" #'kernel/org-omicron
-      "p" #'kernel/org-pi
-      "r" #'kernel/org-rho
-      "s" #'kernel/org-sigma
-      "t" #'kernel/org-theta
-      "u" #'kernel/org-tau
-      "v" #'kernel/org-psi
-      "w" #'kernel/org-omega
-      "x" #'kernel/org-xi
-      "y" #'kernel/org-upsilon
-      "z" #'kernel/org-zeta
-
-      "A" #'kernel/org-Alpha
-      "B" #'kernel/org-Beta
-      "C" #'kernel/org-Chi
-      "D" #'kernel/org-Delta
-      "E" #'kernel/org-Epsilon
-      "F" #'kernel/org-Phi
-      "G" #'kernel/org-Gamma
-      "H" #'kernel/org-Eta
-      "I" #'kernel/org-Iota
-      "K" #'kernel/org-Kappa
-      "L" #'kernel/org-Lambda
-      "M" #'kernel/org-Mu
-      "N" #'kernel/org-Nu
-      "O" #'kernel/org-Omicron
-      "P" #'kernel/org-Pi
-      "R" #'kernel/org-Rho
-      "S" #'kernel/org-Sigma
-      "T" #'kernel/org-Theta
-      "U" #'kernel/org-Tau
-      "V" #'kernel/org-Psi
-      "W" #'kernel/org-Omega
-      "X" #'kernel/org-Xi
-      "Y" #'kernel/org-Upsilon
-      "Z" #'kernel/org-Zeta
-)
 
 (map! :prefix "C-c g"
       :map org-mode-map
