@@ -33,7 +33,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-dark+)
-(setq doom-theme 'leuven)
+(setq doom-theme 'misterioso)
 
 (defun kernel/switch-theme (theme)
   "Change theme and set fringe color to nil."
