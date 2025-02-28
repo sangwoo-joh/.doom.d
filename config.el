@@ -499,7 +499,8 @@
       "$" #'(lambda () (interactive) (insert "£")))
 
 (map! :prefix "C-c t"
-      "t" #'kernel/rotate-themes)
+      "t" #'kernel/rotate-themes
+      "s" #'kernel/switch-theme)
 ;; Greek letters macro
 
 (defun kernel/make-greek-letter-macro (letter)
