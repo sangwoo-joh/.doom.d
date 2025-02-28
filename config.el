@@ -804,10 +804,14 @@
     "Red."
     :group 'basic-faces)
   (custom-set-faces!
-    '(org-level-1 :height 1.3 :weight extrabold :slant normal)
-    '(org-level-2 :height 1.2 :weight bold :slant normal)
-    '(org-level-3 :height 1.15 :weight regular :slant normal)
-    '(org-level-4 :height 1.1 :weight regular :slant normal)
+    '(org-level-1 :height 2.0 :weight extrabold :slant normal)
+    '(org-level-2 :height 1.8 :weight bold :slant normal)
+    '(org-level-3 :height 1.5 :weight regular :slant normal)
+    '(org-level-4 :height 1.4 :weight regular :slant normal)
+    '(org-level-5 :height 1.3)
+    '(org-level-6 :height 1.2)
+    '(org-level-7 :height 1.15)
+    '(org-level-8 :height 1.1)
     '(org-document-title
       :height 300
       :weight bold)))
