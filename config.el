@@ -33,6 +33,10 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-dark+)
+
+;; my themes queue
+(defvar kernel/themes '(doom-monokai-octagon misterioso))
+
 (setq doom-theme 'misterioso)
 
 (defun kernel/switch-theme (theme)
@@ -52,7 +56,6 @@
       (setq doom-theme theme)
       (load-theme doom-theme t)
       (set-face-attribute 'fringe nil :background nil :inherit 'default))))
-
 ;; HACK: for some reason, setting fringe color after loading a theme doesn't work.
 ;; So I use this hook to set fringe color after loading a theme.
 
@@ -381,6 +384,13 @@
   (message "Total items: %d" (length (dired-get-marked-files)))
   (dired-toggle-marks))
 
+(defun kernel/rotate-themes ()
+  "Rotate my favourite themes"
+  (interactive)
+  (let* ((theme-head (car kernel/themes)))
+    (setq kernel/themes (append (cdr kernel/themes) (list theme-head)))
+    (message "Switch to %s" theme-head)
+    (kernel/switch-theme theme-head)))
 
 ;; Selecting all buffer is already mapped to C-x h (mark-whole-buffer)
 
@@ -488,6 +498,8 @@
 (map! :prefix "C-c s"
       "$" #'(lambda () (interactive) (insert "£")))
 
+(map! :prefix "C-c t"
+      "t" #'kernel/rotate-themes)
 ;; Greek letters macro
 
 (defun kernel/make-greek-letter-macro (letter)
