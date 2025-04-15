@@ -35,9 +35,9 @@
 ;; (setq doom-theme 'doom-dark+)
 
 ;; my themes queue
-(defvar kernel/themes '(doom-monokai-octagon misterioso))
+(defvar kernel/themes '(doom-dark+ doom-dracula))
 
-(setq doom-theme 'misterioso)
+(setq doom-theme 'doom-dracula)
 
 (defun kernel/switch-theme (theme)
   "Change theme and set fringe color to nil."
