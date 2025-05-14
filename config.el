@@ -593,6 +593,9 @@
 (map! :map org-mode-map
       "C-c c b" #'org-cycle-list-bullet)
 
+(use-package! ocamlformat
+  :after tuareg)
+
 (map! :map tuareg-mode-map
       "C-c C-f" #'ocamlformat
       "C-c C-o" #'merlin-eldoc-jump-to-next-occurrence)
