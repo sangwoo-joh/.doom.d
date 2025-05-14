@@ -675,7 +675,8 @@
 ;;
 ;; (add-hook! 'prog-mode-hook #'copilot-mode)
 (after! ocaml
-  (setq tuareg-prettify-symbols-full nil))
+  (setq tuareg-prettify-symbols-full nil)
+  (ocamlformat-before-save))
 
 (defun nicer-md ()
   (progn
