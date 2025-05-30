@@ -591,7 +591,8 @@
       "M-." #'kernel/ps/md-goto-leetcode-document)
 
 (map! :map org-mode-map
-      "C-c c b" #'org-cycle-list-bullet)
+      "C-c c b" #'org-cycle-list-bullet
+      "M-." #'org-open-at-point)
 
 (use-package! ocamlformat
   :after tuareg)
