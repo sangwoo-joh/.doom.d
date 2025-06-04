@@ -133,7 +133,7 @@
 
 ;; Font settings
 (when IS-LINUX
-  (setq doom-font (font-spec :family "Ubuntu Mono derivative Powerline" :height 20))
+  (setq doom-font (font-spec :family "Menlo for Powerline" :height 20))
   (add-hook! 'after-setting-font-hook
     (set-fontset-font "fontset-default" 'hangul (font-spec :family "D2Coding" :height 20))))
 
