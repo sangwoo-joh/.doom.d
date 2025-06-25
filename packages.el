@@ -82,3 +82,4 @@
 (package! olivetti)
 ;; (package! all-the-icons) -> need to run (nerd-icons-install-fonts)
 (package! adoc-mode)
+(package! writegood-mode :disable t)
