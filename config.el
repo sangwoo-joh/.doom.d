@@ -606,8 +606,7 @@
 
 (map! :map (c++-mode-map c-mode-map)
       "M-." #'rtags-find-symbol-at-point
-      "M-," #'xref-go-back
-      "C-," #'xref-go-forward
+      "M-," #'rtags-location-stack-back
       "C-c C-t" #'rtags-symbol-type)
 
 (map! :map eshell-mode-map
