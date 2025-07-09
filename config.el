@@ -801,6 +801,9 @@
 (add-hook! 'pdf-view-mode-hook #'nicer-pdf-view)
 
 (after! org
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((mermaid . t)))
   (custom-set-faces!
     '((org-block) :background nil))
   (defface redd

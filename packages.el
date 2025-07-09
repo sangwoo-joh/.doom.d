@@ -84,3 +84,4 @@
 (package! adoc-mode)
 (package! writegood-mode :disable t)
 (package! rtags)
+(package! ob-mermaid)
