@@ -784,7 +784,8 @@
 ;;; Ugly org hooks
 (defun nicer-org ()
   (progn
-    (+org-pretty-mode 1)
+    (setq org-modern-label-border nil)
+    (global-org-modern-mode)
     (olivetti-mode t)
     (olivetti-set-width 0.8)
     (display-line-numbers-mode -1)
