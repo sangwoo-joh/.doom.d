@@ -812,17 +812,18 @@
     "Red."
     :group 'basic-faces)
   (custom-set-faces!
-    '(org-level-1 :height 2.5 :weight extrabold :slant normal)
-    '(org-level-2 :height 2.0 :weight bold :slant normal)
-    '(org-level-3 :height 1.8 :weight regular :slant normal)
-    '(org-level-4 :height 1.5 :weight regular :slant normal)
-    '(org-level-5 :height 1.3)
-    '(org-level-6 :height 1.2)
-    '(org-level-7 :height 1.15)
-    '(org-level-8 :height 1.1)
+    '(org-level-1 :height 2.0 :weight extrabold)
+    '(org-level-2 :height 1.8 :weight bold)
+    '(org-level-3 :height 1.5 :weight bold)
+    '(org-level-4 :height 1.3 :weight bold)
+    '(org-level-5 :height 1.2 :weight bold)
+    '(org-level-6 :height 1.1 :weight bold)
+    '(org-level-7 :weight bold)
+    '(org-level-8 :weight bold)
     '(org-document-title
       :height 300
-      :weight bold)))
+      :weight extrabold
+      :slant italic)))
 
 (after! org
   (setq org-emphasis-alist
