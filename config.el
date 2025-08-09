@@ -138,7 +138,7 @@
     (set-fontset-font "fontset-default" 'hangul (font-spec :family "D2Coding" :height 26))))
 
 (when IS-MAC
-  (setq doom-font (font-spec :family "Menlo" :size 16))
+  (setq doom-font (font-spec :family "Menlo" :size 18))
   (add-hook! 'after-setting-font-hook
     (set-fontset-font "fontset-default" 'hangul (font-spec :family "Menlo" :size 16))))
 
