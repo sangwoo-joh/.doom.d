@@ -243,6 +243,23 @@
   (interactive)
   (format "https://leetcode.com/problems/%s/" problem))
 
+(defun kernel/org/save-with-timestamp ()
+  "Save org file with timestamp."
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (org-set-property "LAST_UPDATE" (format-time-string "%Y-%02m-%02d %02H:%02M:%02S"))))
+
+(defun kernel/org/add-save-with-timestamp-hook ()
+  "Add org timestamp hook."
+  (interactive)
+  (add-hook 'before-save-hook #'kernel/org/save-with-timestamp nil 'local))
+
+(defun kernel/org/delete-save-with-timestamp-hook ()
+  "Delete org timestamp hook."
+  (interactive)
+  (remove-hook 'before-save-hook #'kernel/org/save-with-timestamp 'local))
+
 (defun kernel/md/save-with-timestamp ()
   "Save markdown with timestamp"
   (interactive)
@@ -794,6 +811,7 @@
     (setq left-margin-width 1 right-margin-width 1)))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
+(add-hook! 'org-mode-hook #'kernel/org/add-save-with-timestamp-hook)
 
 (defun nicer-pdf-view ()
   (progn
