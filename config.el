@@ -609,6 +609,7 @@
 
 (map! :map org-mode-map
       "C-c c b" #'org-cycle-list-bullet
+      "C-c s j" #'org-journal-search-forever
       "M-." #'org-open-at-point)
 
 (use-package! ocamlformat
