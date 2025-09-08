@@ -822,6 +822,18 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((mermaid . t)))
+  (setq org-todo-keywords
+        '((sequence
+           "TODO(t!)"  ; A task that needs doing & is ready to do
+           "WIP(w!)"  ; A task that is in progress
+           "HOLD(h@)"  ; This task is paused/on hold because of me
+           "|"
+           "DONE(d!)"  ; Task successfully completed
+           "KILLED(k@)")) ; Task was cancelled, aborted, or is no longer applicable
+        org-todo-keyword-faces
+        '(("WIP" . +org-todo-active)
+          ("HOLD" . +org-todo-onhold)
+          ("KILLED" . +org-todo-cancel)))
   (custom-set-faces!
     '((org-block) :background nil))
   (defface redd
