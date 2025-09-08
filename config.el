@@ -842,6 +842,7 @@
       :height 300
       :weight extrabold
       :slant italic))
+  (setq org-log-done 'time)
   (setq org-directory "~/.roam")
   (setq org-emphasis-alist
         '(("*" (bold))
