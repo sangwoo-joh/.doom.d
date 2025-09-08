@@ -829,7 +829,14 @@
            "HOLD(h@)"  ; This task is paused/on hold because of me
            "|"
            "DONE(d!)"  ; Task successfully completed
-           "KILLED(k@)")) ; Task was cancelled, aborted, or is no longer applicable
+           "KILLED(k@)")  ; Task was cancelled, aborted, or is no longer applicable
+          (sequence
+           "[ ](T)"  ; A task that needs doing
+           "[-](W)"  ; A task that is in progress
+           "[?](H)"  ; paused/on hold
+           "|"
+           "[x](D!)"  ; done
+           "[k](K!)")) ; killed
         org-todo-keyword-faces
         '(("WIP" . +org-todo-active)
           ("HOLD" . +org-todo-onhold)
