@@ -967,7 +967,6 @@
   :config
   (setq org-roam-v2-ack t)
   (setq org-roam-directory "~/.roam")
-
   (org-roam-db-autosync-enable)
   (setq org-roam-completion-everywhere t))
 
