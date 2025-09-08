@@ -984,3 +984,8 @@
         ("America/Los_Angeles" "Seattle")
         ("America/New_York" "New York")))
 (setq world-clock-time-format "%A %Y-%m-%d %H:%M:%S %Z")
+
+(use-package! org-journal
+  :after org
+  :config
+  (setq org-journal-date-format "%A, %Y-%m-%d"))
