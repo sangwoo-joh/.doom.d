@@ -509,6 +509,11 @@
       "b" #'bookmark-set
       "l" #'list-bookmarks)
 
+;; org-journal
+(map! :prefix "C-c j"
+      "n" #'org-journal-new-entry
+      "s" #'org-journal-search-forever)
+
 (map! :prefix "C-c v"
       "b" #'magit-blame-addition)
 
@@ -608,8 +613,6 @@
       "M-." #'kernel/ps/md-goto-leetcode-document)
 
 (map! :map org-mode-map
-      "C-c c b" #'org-cycle-list-bullet
-      "C-c s j" #'org-journal-search-forever
       "M-." #'org-open-at-point)
 
 (use-package! ocamlformat
