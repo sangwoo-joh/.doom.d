@@ -995,4 +995,5 @@
 (use-package! org-journal
   :after org
   :config
+  (setq-default system-time-locale "C")
   (setq org-journal-date-format "%A, %Y-%m-%d"))
