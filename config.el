@@ -841,9 +841,8 @@
     '(org-document-title
       :height 300
       :weight extrabold
-      :slant italic)))
-
-(after! org
+      :slant italic))
+  (setq org-directory "~/.roam")
   (setq org-emphasis-alist
         '(("*" (bold))
           ("/" italic)
@@ -948,7 +947,7 @@
   :config
   (setq org-roam-v2-ack t)
   (setq org-roam-directory "~/.roam")
-  (setq org-directory "~/.roam")
+
   (org-roam-db-autosync-enable)
   (setq org-roam-completion-everywhere t))
 
