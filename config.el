@@ -812,6 +812,7 @@
     (global-org-modern-mode)
     (olivetti-mode t)
     (olivetti-set-width 0.8)
+    (setq olivetti-style 'fancy)
     (display-line-numbers-mode -1)
     (org-latex-preview)
     (org-toggle-inline-images)
