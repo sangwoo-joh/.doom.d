@@ -512,6 +512,7 @@
 ;; org-journal
 (map! :prefix "C-c j"
       "n" #'org-journal-new-entry
+      "d" #'org-journal-new-date-entry
       "s" #'org-journal-search-forever
       "y" #'org-journal-search-calendar-year
       "m" #'org-journal-search-calendar-month
