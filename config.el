@@ -871,7 +871,19 @@
       :weight extrabold
       :slant italic))
   (setq org-log-done 'time)
-  (setq org-directory "~/.roam"))
+  (setq org-directory "~/.roam")
+  (setq org-inbox (file-name-concat org-directory "inbox"))
+  (setq org-default-notes-file (file-name-concat org-inbox "notes.org"))
+  (setq org-agenda-files (list org-inbox))
+  ;; Doom variables like +org-... can be used after org is initialised.
+  (setq +org-capture-todo-file (file-name-concat org-inbox "inbox.org"))
+  (setq +org-capture-changelog-file (file-name-concat org-inbox "changelog.org"))
+  (setq +org-capture-notes-file (file-name-concat org-inbox "notes.org"))
+  (setq +org-capture-journal-file (file-name-concat org-inbox "journal.org"))
+  (setq +org-capture-project-file (file-name-concat org-inbox "project.org"))
+  (setq org-capture-templates
+        '(("i" "Inbox" entry (file+headline +org-capture-todo-file "Inbox")
+           "** TODO %?\n%i\n" :prepent t))))
 
 (with-eval-after-load 'org
   (plist-put org-format-latex-options :background 'default))
