@@ -812,7 +812,7 @@
     (setq org-modern-label-border nil)
     (global-org-modern-mode)
     (olivetti-mode t)
-    (olivetti-set-width 0.8)
+    (olivetti-set-width 0.9)
     (setq olivetti-style 'fancy)
     (display-line-numbers-mode -1)
     (org-latex-preview)
