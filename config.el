@@ -832,20 +832,23 @@
    'org-babel-load-languages
    '((mermaid . t)))
   (setq org-todo-keywords
+        ;; org mode expects configuration on a per-keyword basis for state.
+        ;; '!' (for a timestamp)
+        ;; '@' (for a note with timestamp)
         '((sequence
-           "TODO(t!)"  ; A task that needs doing & is ready to do
-           "WIP(w!)"  ; A task that is in progress
+           "TODO(t@)"  ; A task that needs doing & is ready to do
+           "WIP(w@)"  ; A task that is in progress
            "HOLD(h@)"  ; This task is paused/on hold because of me
            "|"
-           "DONE(d!)"  ; Task successfully completed
+           "DONE(d@)"  ; Task successfully completed
            "KILLED(k@)")  ; Task was cancelled, aborted, or is no longer applicable
           (sequence
-           "[ ](T)"  ; A task that needs doing
-           "[-](W)"  ; A task that is in progress
-           "[?](H)"  ; paused/on hold
+           "[ ](T@)"  ; A task that needs doing
+           "[-](W@)"  ; A task that is in progress
+           "[?](H@)"  ; paused/on hold
            "|"
-           "[x](D!)"  ; done
-           "[k](K!)")) ; killed
+           "[x](D@)"  ; done
+           "[k](K@)")) ; killed
         org-todo-keyword-faces
         '(("WIP" . +org-todo-active)
           ("HOLD" . +org-todo-onhold)
