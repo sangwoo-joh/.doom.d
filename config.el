@@ -885,7 +885,9 @@
   (setq +org-capture-journal-file (file-name-concat org-inbox "journal.org"))
   (setq +org-capture-project-file (file-name-concat org-inbox "project.org"))
   (setq org-capture-templates
-        '(("i" "Inbox" entry (file+headline +org-capture-todo-file "Inbox")
+        '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox")
+           "** TODO %?\n%i\n" :prepent t)
+          ("i" "Inbox" entry (file+headline +org-capture-todo-file "Inbox")
            "** TODO %?\n%i\n" :prepent t))))
 
 (with-eval-after-load 'org
