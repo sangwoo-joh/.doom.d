@@ -884,11 +884,17 @@
   (setq +org-capture-notes-file (file-name-concat org-inbox "notes.org"))
   (setq +org-capture-journal-file (file-name-concat org-inbox "journal.org"))
   (setq +org-capture-project-file (file-name-concat org-inbox "project.org"))
+  ;; special %-escapes allow dynamic insertion of template content.
+  ;; %a : annotation, normally the link created with org-store-link
+  ;; %i : initial content, the region when capture is called with C-u
+  ;; %t, %T : timestamp, date only, or date and time
+  ;; %u, %U : like above, but inactive timestamps
+  ;; %? : after completing the template, position point here
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox")
-           "** TODO %?\n%i\n" :prepent t)
+           "** TODO %? \n%i\n\n" :prepent t)
           ("i" "Inbox" entry (file+headline +org-capture-todo-file "Inbox")
-           "** TODO %?\n%i\n" :prepent t))))
+           "** TODO %? [/]\n%i\n\n" :prepent t))))
 
 (with-eval-after-load 'org
   (plist-put org-format-latex-options :background 'default))
