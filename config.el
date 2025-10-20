@@ -709,9 +709,11 @@
   (progn
     ;; (setq left-margin-width 10 right-margin-width 10)
     (olivetti-mode t)
-    (olivetti-set-width 0.8)
+    (olivetti-set-width 0.9)
+    (setq olivetti-style 'fancy)
     (display-line-numbers-mode -1)
     (setq markdown-header-scaling t)
+    (setq left-margin-width 1 right-margin-width 1)
     (markdown-toggle-fontify-code-blocks-natively)))
 
 ;; turn off for work
