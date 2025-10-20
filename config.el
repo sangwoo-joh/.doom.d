@@ -933,3 +933,4 @@
   (progn
     (visual-line-mode t)))
 (add-hook! 'magit-status-mode-hook #'nicer-magit)
+(add-hook! 'magit-revision-mode-hook #'nicer-magit)
