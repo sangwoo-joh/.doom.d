@@ -518,6 +518,10 @@
       "m" #'org-journal-search-calendar-month
       "w" #'org-journal-search-calendar-week)
 
+(map! :after org
+      :map calendar-mode-map
+      "RET" #'org-journal-read-entry)
+
 (map! :prefix "C-c v"
       "b" #'magit-blame-addition)
 
