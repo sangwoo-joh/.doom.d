@@ -879,6 +879,7 @@
       :height 300
       :weight extrabold
       :slant italic))
+  (setq org-ellipsis "⤵")
   (setq org-log-done 'time)
   (setq org-directory "~/.roam")
   (setq org-inbox (file-name-concat org-directory "inbox"))
