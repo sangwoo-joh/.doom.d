@@ -719,6 +719,7 @@
     (setq olivetti-style 'fancy)
     (display-line-numbers-mode -1)
     (setq markdown-header-scaling t)
+    (visual-line-mode t)
     (setq left-margin-width 1 right-margin-width 1)
     (markdown-toggle-fontify-code-blocks-natively)))
 
@@ -825,6 +826,7 @@
     (display-line-numbers-mode -1)
     (org-latex-preview)
     (org-toggle-inline-images)
+    (visual-line-mode t)
     (setq left-margin-width 1 right-margin-width 1)))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
