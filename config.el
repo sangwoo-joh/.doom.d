@@ -635,6 +635,8 @@
 (add-hook! tuareg-mode (merlin-mode))
 (add-hook! tuareg-mode (opam-switch-mode))
 
+(add-hook! latex-mode (LaTeX-mode))
+
 (map! :map (c++-mode-map c-mode-map)
       "M-." #'rtags-find-symbol-at-point
       "M-," #'rtags-location-stack-back
