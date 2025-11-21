@@ -713,16 +713,19 @@
 (after! ocaml
   (setq tuareg-prettify-symbols-full nil))
 
-(defun nicer-md ()
+(defun nicer-text ()
   (progn
-    ;; (setq left-margin-width 10 right-margin-width 10)
     (olivetti-mode t)
     (olivetti-set-width 0.9)
     (setq olivetti-style 'fancy)
     (display-line-numbers-mode -1)
-    (setq markdown-header-scaling t)
     (visual-line-mode t)
-    (setq left-margin-width 1 right-margin-width 1)
+    (setq left-margin-width 1 right-margin-width 1)))
+
+(defun nicer-md ()
+  (progn
+    (nicer-text)
+    (setq markdown-header-scaling t)
     (markdown-toggle-fontify-code-blocks-natively)))
 
 ;; turn off for work
@@ -820,16 +823,11 @@
 ;;; Ugly org hooks
 (defun nicer-org ()
   (progn
+    (nicer-text)
     (setq org-modern-label-border nil)
     (global-org-modern-mode)
-    (olivetti-mode t)
-    (olivetti-set-width 0.9)
-    (setq olivetti-style 'fancy)
-    (display-line-numbers-mode -1)
     (org-latex-preview)
-    (org-toggle-inline-images)
-    (visual-line-mode t)
-    (setq left-margin-width 1 right-margin-width 1)))
+    (org-toggle-inline-images)))
 
 (add-hook! 'org-mode-hook  #'nicer-org)
 (add-hook! 'org-mode-hook #'kernel/org/add-save-with-timestamp-hook)
