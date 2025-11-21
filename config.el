@@ -716,7 +716,7 @@
 (defun nicer-text ()
   (progn
     (olivetti-mode t)
-    (olivetti-set-width 0.9)
+    (olivetti-set-width 0.95)
     (setq olivetti-style 'fancy)
     (display-line-numbers-mode -1)
     (visual-line-mode t)
