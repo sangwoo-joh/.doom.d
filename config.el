@@ -945,3 +945,4 @@
     (visual-line-mode t)))
 (add-hook! 'magit-status-mode-hook #'wrap-line)
 (add-hook! 'magit-revision-mode-hook #'wrap-line)
+(add-hook! 'fundamental-mode-hook #'wrap-line)
