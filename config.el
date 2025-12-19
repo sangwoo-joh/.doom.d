@@ -940,8 +940,8 @@
   (setq-default system-time-locale "C")
   (setq org-journal-date-format "%A, %Y-%m-%d"))
 
-(defun nicer-magit ()
+(defun wrap-line ()
   (progn
     (visual-line-mode t)))
-(add-hook! 'magit-status-mode-hook #'nicer-magit)
-(add-hook! 'magit-revision-mode-hook #'nicer-magit)
+(add-hook! 'magit-status-mode-hook #'wrap-line)
+(add-hook! 'magit-revision-mode-hook #'wrap-line)
