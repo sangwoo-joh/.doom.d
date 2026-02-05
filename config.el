@@ -528,6 +528,7 @@
       "b" #'magit-blame-addition)
 
 (map! :prefix "C-c s"
+      "#" #'(lambda () (interactive) (insert "€"))
       "$" #'(lambda () (interactive) (insert "£")))
 
 (map! :prefix "C-c t"
