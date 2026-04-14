@@ -827,6 +827,7 @@
   (progn
     (nicer-text)
     (setq org-modern-label-border nil)
+    (setq org-modern-star 'replace)
     (global-org-modern-mode)
     (org-latex-preview)
     (org-toggle-inline-images)))
@@ -948,3 +949,4 @@
 (add-hook! 'magit-status-mode-hook #'wrap-line)
 (add-hook! 'magit-revision-mode-hook #'wrap-line)
 (add-hook! 'fundamental-mode-hook #'wrap-line)
+(setq ispell-dictionary "en_GB")
