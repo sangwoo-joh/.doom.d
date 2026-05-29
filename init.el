@@ -25,7 +25,7 @@
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;; (ivy +prescient +fuzzy +icons)               ; a search engine for love and life
-       (vertico +syntax +icons)            ; the search engine of the future
+       ;;(vertico +syntax +icons)            ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -89,10 +89,10 @@
        ;; biblio            ; Writes a PhD for you (citation needed)
        ;;debugger          ; FIXME stepping through code, to help you add bugs
        ;;direnv
-       docker
+       ;;docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
-       ein               ; tame Jupyter notebooks with emacs
-       (eval +overlay)     ; run code, run (also, repls)
+       ;;ein               ; tame Jupyter notebooks with emacs
+       ;;(eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        (lookup +dictionary)              ; navigate your code and its documentation
        (lsp +eglot)               ; M-x vscode
