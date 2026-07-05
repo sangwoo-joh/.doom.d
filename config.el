@@ -122,9 +122,9 @@
   (display-battery-mode 1))
 
 ;; fullscreen when starting emacs
-(if (eq initial-window-system 'x)
-    (toggle-frame-maximized)
-  (toggle-frame-fullscreen))
+;; (if (eq initial-window-system 'x)
+;;     (toggle-frame-maximized)
+;;   (toggle-frame-fullscreen))
 
 (setq require-final-newline t)
 (setq x-alt-keysym 'meta)
@@ -138,6 +138,7 @@
     (set-fontset-font "fontset-default" 'hangul (font-spec :family "D2Coding" :height 26))))
 
 (when IS-MAC
+  (setq ns-use-native-fullscreen t)
   (setq doom-font (font-spec :family "Menlo" :size 18))
   (add-hook! 'after-setting-font-hook
     (set-fontset-font "fontset-default" 'hangul (font-spec :family "Menlo" :size 16))))
