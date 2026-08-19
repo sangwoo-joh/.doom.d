@@ -121,11 +121,6 @@
 (unless (string-match-p "battery unknown" (battery))
   (display-battery-mode 1))
 
-;; fullscreen when starting emacs
-;; (if (eq initial-window-system 'x)
-;;     (toggle-frame-maximized)
-;;   (toggle-frame-fullscreen))
-
 (setq require-final-newline t)
 (setq x-alt-keysym 'meta)
 (setq tramp-default-method "sshx")
@@ -951,3 +946,8 @@
 (add-hook! 'magit-revision-mode-hook #'wrap-line)
 (add-hook! 'fundamental-mode-hook #'wrap-line)
 (setq ispell-dictionary "en_GB")
+
+;; fullscreen when starting emacs
+(if (eq initial-window-system 'x)
+    (toggle-frame-maximized)
+  (toggle-frame-fullscreen))
